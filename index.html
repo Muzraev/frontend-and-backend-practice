@@ -3,60 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Семестровая работа</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <title>О нас - Наш сайт</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="page-container">
-        <div class="header">Хэдер</div>
-        
-        <div class="nav">
+        <header class="header">
+            <h1>Наша компания</h1>
+        </header>
+
+        <nav class="nav">
             <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">О нас</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                <li class="nav-item"><a class="nav-link" href="education.html">Учебный процесс</a></li>
+                <li class="nav-item"><a class="nav-link" href="portfolio.html">Портфолио</a></li>
             </ul>
-        </div>
-        
-        <div class="content">
-            <div class="profile-header">
-                <h1 class="profile-title">Информация об авторе</h1>
-                <img class="profile-photo" src="images/photo.png" alt="Фото автора">
-                <h2 class="profile-name">Музраев Санджи Мингиянович</h2>
-                <p class="profile-group">ЭФБО-16-24</p>
-            </div>
+        </nav>
 
-            <div class="about-me">
-                <p>Обо мне: Я родился в Москве в 70-м на краю города. Глупость рано ударила в голову. В четыре активно ругался. Потом школа, форма, драки, клей. Так я становился сильней. Воровал деньги в раздевалке.</p>
-            </div>
+        <main class="content">
+            <article class="about-company">
+                <h2>О нашей компании</h2>
+                <img src="images/company.jpg" alt="Наша компания" class="company-image">
+                <p>Мы работаем в сфере IT-образования с 2010 года...</p>
+            </article>
 
-            <div class="skills-container">
-                <div class="skill-tag">Навык 1</div>
-                <div class="skill-tag">Навык 2</div>
-                <div class="skill-tag">Навык 3</div>
-                <div class="skill-tag">Навык 4</div>
-            </div>
+            <section class="advantages">
+                <h2>Наши преимущества</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <h3>Качество</h3>
+                        <p>Высокое качество предоставляемых услуг</p>
+                    </div>
+                    <div class="advantage-card">
+                        <h3>Опыт</h3>
+                        <p>Многолетний опыт работы в сфере IT</p>
+                    </div>
+                    <div class="advantage-card">
+                        <h3>Инновации</h3>
+                        <p>Использование современных технологий</p>
+                    </div>
+                </div>
+            </section>
 
-            <div class="experience-section">
-                <h2 class="section-title">Мой опыт работы</h2>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 1</h3>
-                    <p class="experience-desc">Работал фантазёром. Сочинял и праздновал.</p>
-                </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 2</h3>
-                    <p class="experience-desc">Работал воровством. Воровал и продавал.</p>
-                </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 3</h3>
-                    <p class="experience-desc">Работал рэпером. Читал и пел.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer">Футер</div>
+            <aside class="side-info">
+                <h3>Быстрые ссылки</h3>
+                <ul>
+                    <li><a href="#history">Наша история</a></li>
+                    <li><a href="#team">Наша команда</a></li>
+                    <li><a href="#values">Наши ценности</a></li>
+                </ul>
+            </aside>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Наша компания. Все права защищены.</p>
+        </footer>
     </div>
 </body>
 </html>
