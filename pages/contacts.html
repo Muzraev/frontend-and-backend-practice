@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты - Наш сайт</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
     <div class="page-container">
@@ -14,48 +14,57 @@
         </header>
 
         <nav class="nav">
-            <!-- Такая же навигация как в index.html -->
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
         </nav>
 
         <main class="content">
-            <section class="contacts-info">
+            <section class="contacts-container">
                 <h2>Свяжитесь с нами</h2>
                 
-                <!-- Модальное окно с формой -->
-                <dialog open class="modal-dialog">
-                    <form action="thankyou.html" method="get" class="contact-form">
-                        <h3>Форма обратной связи</h3>
-                        
-                        <label for="name">Имя:</label>
-                        <input type="text" id="name" name="name" required>
-                        
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                        
-                        <label for="phone">Телефон:</label>
-                        <input type="tel" id="phone" name="phone" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" placeholder="+7 (123) 456-78-90">
-                        
-                        <label for="date">Дата:</label>
-                        <input type="date" id="date" name="date">
-                        
-                        <label for="country">Страна:</label>
-                        <select id="country" name="country">
-                            <option value="ru">Россия</option>
-                            <option value="kz">Казахстан</option>
-                            <option value="by">Беларусь</option>
-                        </select>
-                        
-                        <label for="message">Комментарий:</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
-                        
-                        <button type="submit" class="submit-btn">Отправить</button>
-                    </form>
-                </dialog>
+                <div class="contact-info">
+                    <p><strong>Электронная почта:</strong> asdabv@ninea.ru</p>
+                    <p><strong>Телефон:</strong> +7 (123) 456-78-90</p>
+                    <p><strong>Адрес:</strong> Москва, ул. Примерная, д. 123</p>
+                </div>
+
+                <form action="thankyou.html" method="get" class="contact-form">
+                    <h3>Форма обратной связи</h3>
+                    
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" placeholder="+7 (123) 456-78-90">
+                    
+                    <label for="date">Дата:</label>
+                    <input type="date" id="date" name="date">
+                    
+                    <label for="country">Страна:</label>
+                    <select id="country" name="country">
+                        <option value="ru">Россия</option>
+                        <option value="kz">Казахстан</option>
+                        <option value="by">Беларусь</option>
+                    </select>
+                    
+                    <label for="message">Комментарий:</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                    
+                    <button type="submit" class="contact-button">Отправить</button>
+                </form>
             </section>
         </main>
 
         <footer class="footer">
-            <!-- Такой же футер как в index.html -->
+            <p>Футер</p>
         </footer>
     </div>
 </body>
