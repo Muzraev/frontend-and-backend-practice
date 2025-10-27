@@ -4,22 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Проекты - Портфолио</title>
-    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/projects.css">
 </head>
 <body>
-    <div class="page">
-        <!-- Header -->
+    <div class="container">
         <header class="header">
-            <div class="container">
-                <div class="header_content">
-                    <h1 class="header_title">Музраев Санджи</h1>
-                    <p class="header_subtitle">Студент-разработчик</p>
-                    <span class="badge">ЭФБО-16-24</span>
-                </div>
-            </div>
+            <h1 class="header__title">Мои проекты</h1>
+            <p class="header__subtitle">Портфолио студента-разработчика</p>
         </header>
 
-        <!-- Navigation -->
         <nav class="nav">
             <div class="container">
                 <ul class="nav_list">
@@ -39,156 +32,235 @@
             </div>
         </nav>
 
-        <!-- Main Content -->
         <main class="main">
-            <div class="container">
-                <!-- Projects Header -->
-                <div class="projects_header">
-                    <h2 class="section-title">Мои проекты</h2>
-                    <div class="projects_filters">
-                        <button class="filter filter--active" data-filter="all">Все</button>
-                        <button class="filter" data-filter="html">HTML</button>
-                        <button class="filter" data-filter="js">JavaScript</button>
-                        <button class="filter" data-filter="react">React</button>
+            <!-- Секция 1: Базовое адаптивное изображение -->
+            <section class="section">
+                <h2 class="section__title">1. Личный сайт - Базовое адаптивное изображение</h2>
+                <div class="image-container">
+                    <img src="../images/project1.jpg"
+                         alt="Личный сайт портфолио"
+                         class="responsive-image">
+                </div>
+                <div class="explanation">
+                    <h3>Техника:</h3>
+                    <ul>
+                        <li>Изображение занимает 100% ширины контейнера</li>
+                        <li>Высота автоматически рассчитывается для сохранения пропорций</li>
+                        <li>Работает на всех устройствах</li>
+                    </ul>
+                    <div class="project-info">
+                        <h4>О проекте:</h4>
+                        <p>Персональный веб-сайт-портфолио с адаптивным дизайном, созданный с использованием HTML5, CSS3 и Bootstrap 5.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Projects Grid -->
-                <div class="projects_grid">
-                    <article class="project-card" data-category="html">
-                        <div class="project-card_image">
-                            <!-- Адаптивное изображение с разными версиями для разных экранов -->
-                            <picture>
-                                <source media="(min-width: 1200px)" srcset="../images/project1-desktop.webp" type="image/webp">
-                                <source media="(min-width: 768px)" srcset="../images/project1-tablet.webp" type="image/webp">
-                                <source media="(max-width: 767px)" srcset="../images/project1-mobile.webp" type="image/webp">
-                                <source media="(min-width: 1200px)" srcset="../images/project1-desktop.jpg">
-                                <source media="(min-width: 768px)" srcset="../images/project1-tablet.jpg">
-                                <source media="(max-width: 767px)" srcset="../images/project1-mobile.jpg">
-                                <img src="../images/project1-desktop.jpg" alt="Личный сайт" class="project-card_img" loading="lazy">
-                            </picture>
-                        </div>
-                        <div class="project-card_content">
-                            <h3 class="project-card_title">Личный сайт</h3>
-                            <p class="project-card_description">
-                                Персональный веб-сайт-портфолио с адаптивным дизайном
-                            </p>
-                            <div class="project-card_tags">
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                                <span class="tag">Bootstrap</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card" data-category="js">
-                        <div class="project-card_image">
-                            <picture>
-                                <source media="(min-width: 1200px)" srcset="../images/project2-desktop.webp" type="image/webp">
-                                <source media="(min-width: 768px)" srcset="../images/project2-tablet.webp" type="image/webp">
-                                <source media="(max-width: 767px)" srcset="../images/project2-mobile.webp" type="image/webp">
-                                <source media="(min-width: 1200px)" srcset="../images/project2-desktop.jpg">
-                                <source media="(min-width: 768px)" srcset="../images/project2-tablet.jpg">
-                                <source media="(max-width: 767px)" srcset="../images/project2-mobile.jpg">
-                                <img src="../images/project2-desktop.jpg" alt="Todo приложение" class="project-card_img" loading="lazy">
-                            </picture>
-                        </div>
-                        <div class="project-card_content">
-                            <h3 class="project-card_title">Todo-приложение</h3>
-                            <p class="project-card_description">
-                                Приложение для управления задачами с локальным хранилищем
-                            </p>
-                            <div class="project-card_tags">
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">LocalStorage</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card" data-category="react">
-                        <div class="project-card_image">
-                            <picture>
-                                <source media="(min-width: 1200px)" srcset="../images/project3-desktop.webp" type="image/webp">
-                                <source media="(min-width: 768px)" srcset="../images/project3-tablet.webp" type="image/webp">
-                                <source media="(max-width: 767px)" srcset="../images/project3-mobile.webp" type="image/webp">
-                                <source media="(min-width: 1200px)" srcset="../images/project3-desktop.jpg">
-                                <source media="(min-width: 768px)" srcset="../images/project3-tablet.jpg">
-                                <source media="(max-width: 767px)" srcset="../images/project3-mobile.jpg">
-                                <img src="../images/project3-desktop.jpg" alt="Интернет-магазин" class="project-card_img" loading="lazy">
-                            </picture>
-                        </div>
-                        <div class="project-card_content">
-                            <h3 class="project-card_title">Интернет-магазин</h3>
-                            <p class="project-card_description">
-                                Полнофункциональный интернет-магазин с корзиной покупок
-                            </p>
-                            <div class="project-card_tags">
-                                <span class="tag">React</span>
-                                <span class="tag">JavaScript</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card" data-category="html">
-                        <div class="project-card_image">
-                            <picture>
-                                <source media="(min-width: 1200px)" srcset="../images/project4-desktop.webp" type="image/webp">
-                                <source media="(min-width: 768px)" srcset="../images/project4-tablet.webp" type="image/webp">
-                                <source media="(max-width: 767px)" srcset="../images/project4-mobile.webp" type="image/webp">
-                                <source media="(min-width: 1200px)" srcset="../images/project4-desktop.jpg">
-                                <source media="(min-width: 768px)" srcset="../images/project4-tablet.jpg">
-                                <source media="(max-width: 767px)" srcset="../images/project4-mobile.jpg">
-                                <img src="../images/project4-desktop.jpg" alt="Портфолио" class="project-card_img" loading="lazy">
-                            </picture>
-                        </div>
-                        <div class="project-card_content">
-                            <h3 class="project-card_title">Портфолио</h3>
-                            <p class="project-card_description">
-                                Адаптивное портфолио с фильтрацией проектов
-                            </p>
-                            <div class="project-card_tags">
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                                <span class="tag">Bootstrap</span>
-                            </div>
-                        </div>
-                    </article>
+            <!-- Секция 2: Picture element с форматами -->
+            <section class="section">
+                <h2 class="section__title">2. Todo-приложение - Picture element с форматами</h2>
+                <div class="image-container">
+                    <picture>
+                        <!-- WebP для современных браузеров -->
+                        <source srcset="../images/project2.webp" type="image/webp">
+                        <!-- JPEG для старых браузеров -->
+                        <source srcset="../images/project2.jpg" type="image/jpeg">
+                        <!-- Фолбэк -->
+                        <img src="../images/project2.jpg"
+                             alt="Todo приложение для управления задачами"
+                             class="responsive-image">
+                    </picture>
                 </div>
-            </div>
+                <div class="explanation">
+                    <h3>Техника:</h3>
+                    <ul>
+                        <li>Браузер выбирает лучший формат (WebP или JPEG)</li>
+                        <li>Автоматическое переключение между форматами</li>
+                        <li>Фолбэк для старых браузеров</li>
+                    </ul>
+                    <div class="project-info">
+                        <h4>О проекте:</h4>
+                        <p>Приложение для управления задачами с локальным хранилищем, возможностью добавления, редактирования и удаления задач.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">LocalStorage</span>
+                            <span class="tag">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 3: Разные изображения для разных размеров экрана -->
+            <section class="section">
+                <h2 class="section__title">3. Интернет-магазин - Разные изображения для разных экранов</h2>
+                <div class="image-container">
+                    <picture>
+                        <!-- Большое изображение для десктопов -->
+                        <source media="(min-width: 1200px)" srcset="../images/project3-desktop.jpg">
+                        <!-- Среднее для планшетов -->
+                        <source media="(min-width: 768px)" srcset="../images/project3-tablet.jpg">
+                        <!-- Маленькое для мобильных -->
+                        <img src="../images/project3-mobile.jpg"
+                             alt="Интернет-магазин с корзиной покупок"
+                             class="responsive-image">
+                    </picture>
+                </div>
+                <div class="explanation">
+                    <h3>Техника:</h3>
+                    <ul>
+                        <li>Десктопы: project3-desktop.jpg (1200px+)</li>
+                        <li>Планшеты: project3-tablet.jpg (768px-1199px)</li>
+                        <li>Мобильные: project3-mobile.jpg (до 767px)</li>
+                        <li>Браузер сам выбирает подходящее изображение</li>
+                    </ul>
+                    <div class="project-info">
+                        <h4>О проекте:</h4>
+                        <p>Полнофункциональный интернет-магазин с корзиной покупок, фильтрацией товаров и системой оформления заказов.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">API</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 4: Retina display поддержка -->
+            <section class="section">
+                <h2 class="section__title">4. Мобильное приложение - Поддержка Retina дисплеев</h2>
+                <div class="image-container">
+                    <img src="../images/project4.png"
+                         srcset="../images/project4.png 1x, ../images/project4@2x.png 2x"
+                         alt="Мобильное приложение с поддержкой Retina"
+                         class="retina-image">
+                </div>
+                <div class="explanation">
+                    <h3>Техника:</h3>
+                    <ul>
+                        <li>Обычные экраны: project4.png</li>
+                        <li>Retina экраны: project4@2x.png (в 2 раза четче)</li>
+                        <li>Автоматическое определение плотности пикселей</li>
+                    </ul>
+                    <div class="project-info">
+                        <h4>О проекте:</h4>
+                        <p>Кроссплатформенное мобильное приложение для управления личными финансами с синхронизацией между устройствами.</p>
+                        <div class="project-tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 5: Object-fit демонстрация -->
+            <section class="section">
+                <h2 class="section__title">5. Галерея проектов - Object-fit свойства</h2>
+                <div class="object-fit-demo">
+                    <div class="object-fit-item">
+                        <img src="../images/project1.jpg"
+                             alt="Cover пример"
+                             class="object-fit-cover">
+                        <span>object-fit: cover (обрезка)</span>
+                    </div>
+                    <div class="object-fit-item">
+                        <img src="../images/project2.jpg"
+                             alt="Contain пример"
+                             class="object-fit-contain">
+                        <span>object-fit: contain (вписывание)</span>
+                    </div>
+                    <div class="object-fit-item">
+                        <img src="../images/project3.jpg"
+                             alt="Fill пример"
+                             class="object-fit-fill">
+                        <span>object-fit: fill (растягивание)</span>
+                    </div>
+                </div>
+                <div class="explanation">
+                    <h3>Техника:</h3>
+                    <ul>
+                        <li><strong>cover</strong> - заполняет контейнер, обрезая края</li>
+                        <li><strong>contain</strong> - вписывает полностью, могут быть поля</li>
+                        <li><strong>fill</strong> - растягивает, искажая пропорции</li>
+                    </ul>
+                    <div class="project-info">
+                        <h4>О проекте:</h4>
+                        <p>Интерактивная галерея проектов с различными вариантами отображения изображений для оптимального UX.</p>
+                        <div class="project-tags">
+                            <span class="tag">CSS Grid</span>
+                            <span class="tag">Flexbox</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция 6: Адаптивная галерея -->
+            <section class="section">
+                <h2 class="section__title">6. Портфолио проектов - Адаптивная галерея</h2>
+                <div class="gallery">
+                    <div class="gallery__item">
+                        <div class="gallery__image-container">
+                            <img src="../images/project1.jpg"
+                                 alt="Личный сайт"
+                                 class="gallery__image">
+                        </div>
+                        <div class="gallery__caption">Личный сайт</div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="gallery__image-container">
+                            <img src="../images/project2.jpg"
+                                 alt="Todo приложение"
+                                 class="gallery__image">
+                        </div>
+                        <div class="gallery__caption">Todo приложение</div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="gallery__image-container">
+                            <img src="../images/project3.jpg"
+                                 alt="Интернет-магазин"
+                                 class="gallery__image">
+                        </div>
+                        <div class="gallery__caption">Интернет-магазин</div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="gallery__image-container">
+                            <img src="../images/project4.jpg"
+                                 alt="Мобильное приложение"
+                                 class="gallery__image">
+                        </div>
+                        <div class="gallery__caption">Мобильное приложение</div>
+                    </div>
+                </div>
+                <div class="explanation">
+                    <h3>Техника:</h3>
+                    <ul>
+                        <li><strong>На десктопах:</strong> 4 изображения в ряд</li>
+                        <li><strong>На планшетах:</strong> 2 изображения в ряд</li>
+                        <li><strong>На мобильных:</strong> 1 изображение в ряд</li>
+                        <li><strong>Особенности:</strong> Плавное масштабирование, сохранение пропорций</li>
+                    </ul>
+                    <div class="project-info">
+                        <h4>О проекте:</h4>
+                        <p>Адаптивная галерея проектов с сеточной раскладкой, которая автоматически подстраивается под размер экрана устройства.</p>
+                        <div class="project-tags">
+                            <span class="tag">CSS Grid</span>
+                            <span class="tag">Media Queries</span>
+                            <span class="tag">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
-        <!-- Footer -->
         <footer class="footer">
-            <div class="container">
-                <div class="footer_content">
-                    <p class="footer_copyright">&copy; 2025 Портфолио студента. Все права защищены.</p>
-                    <div class="footer_links">
-                        <a href="contacts.html" class="footer_link">Контакты</a>
-                        <a href="#" class="footer_link">Политика конфиденциальности</a>
-                    </div>
-                </div>
-            </div>
+            <p>&copy; 2025 Портфолио студента. Все права защищены.</p>
+            <p>Измените размер окна браузера чтобы увидеть адаптивность в действии!</p>
         </footer>
     </div>
-
-    <script>
-        document.querySelectorAll('.filter').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter').forEach(b => b.classList.remove('filter--active'));
-                this.classList.add('filter--active');
-                
-                const filter = this.dataset.filter;
-                const projects = document.querySelectorAll('.project-card');
-                
-                projects.forEach(project => {
-                    if (filter === 'all' || project.dataset.category === filter) {
-                        project.style.display = 'block';
-                    } else {
-                        project.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
