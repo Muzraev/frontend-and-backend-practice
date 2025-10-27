@@ -3,164 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная - Портфолио</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Портфолио - Музраев Санджи</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .profile-img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+        }
+        .skill-progress {
+            height: 8px;
+        }
+        .project-card-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .download-btn {
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
-<body>
-    <div class="page">
-        <!-- Header -->
-        <header class="header">
+<body class="bg-light">
+    <div class="container-fluid p-0">
+        
+        <header class="bg-primary text-white py-4">
             <div class="container">
-                <div class="header_content">
-                    <h1 class="header_title">Музраев Санджи</h1>
-                    <p class="header_subtitle">Студент-разработчик</p>
-                    <span class="badge">ЭФБО-16-24</span>
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1">Моё Портфолио</h1>
+                        <p class="mb-0 opacity-75">Студент разработчик</p>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge bg-light text-primary">ЭФБО-16-24</span>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <!-- Navigation -->
-        <nav class="nav">
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <ul class="nav_list">
-                    <li class="nav_item nav_item--active">
-                        <a href="index.html" class="nav_link">Главная</a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="pages/projects.html" class="nav_link">Проекты</a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="pages/diary.html" class="nav_link">Дневник</a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="pages/contacts.html" class="nav_link">Контакты</a>
-                    </li>
-                </ul>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/projects.html">
+                                <i class="bi bi-folder me-1"></i>Проекты
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/diary.html">
+                                <i class="bi bi-journal me-1"></i>Дневник
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/contacts.html">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
-        <!-- Main Content -->
-        <main class="main">
-            <div class="container">
-                <!-- Hero Section -->
-                <section class="hero">
-                    <div class="hero_content">
-                        <div class="hero_image">
-                            <!-- Адаптивное изображение с поддержкой Retina -->
-                            <picture>
-                                <source srcset="images/photo.webp" type="image/webp">
-                                <source srcset="images/photo@2x.png 2x, images/photo.png 1x" type="image/png">
-                                <img src="images/photo." alt="Фото студента" class="hero_photo" loading="lazy">
-                            </picture>
-                        </div>
-                        <div class="hero_info">
-                            <h2 class="hero_greeting">Привет! Я студент</h2>
-                            <p class="hero_description">
-                                Факультет ИПТИП, группа ЭФБО-16-24<br>
-                                Специальность "Фронтенд и бэкенд разработка"
-                            </p>
-                            <div class="hero_actions">
-                                <button class="button button--primary">Скачать резюме</button>
-                                <a href="pages/contacts.html" class="button button--outline">Связаться</a>
+        
+        <main class="container my-4">
+            
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 text-center mb-3 mb-md-0">
+                                <img src="images/photo.png" alt="Фото студента" class="profile-img rounded">
                             </div>
-                            <div class="hero_tags">
-                                <span class="tag">HTML/CSS</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Bootstrap</span>
-                                <span class="tag">React</span>
+                            <div class="col-md-9">
+                                <h2 class="card-title h4 text-primary">Музраев Санджи Мингиянович</h2>
+                                <p class="card-text text-muted mb-2">
+                                    <i class="bi bi-bookmark-check-fill text-primary"></i>
+                                    Студент группы ЭФБО-16-24
+                                </p>
+                                <p class="card-text">
+                                    Факультет ИПТИП, специальность "Фронтенд и бэкенд разработка"
+                                </p>
+                                
+                            
+                                <div class="mb-3">
+                                    <a href="assets/resume.pdf" class="btn btn-success download-btn" download>
+                                        <i class="bi bi-download me-2"></i>Скачать резюме (PDF)
+                                    </a>
+                                </div>
+                                
+                                <div class="d-flex gap-2 flex-wrap">
+                                    <span class="badge bg-primary">HTML/CSS</span>
+                                    <span class="badge bg-success">JavaScript</span>
+                                    <span class="badge bg-info">Bootstrap</span>
+                                    <span class="badge bg-warning">React</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- About Section -->
-                <section class="about">
-                    <h2 class="section-title">Обо мне</h2>
-                    <div class="about_content">
-                        <p>Я родился в Москве в 70-м на краю города. Глупость рано ударила в голову. 
-                        В четыре активно ругался. Потом школа, форма, драки, клей. Так я становился сильней. 
-                        Воровал деньги в раздевалке.</p>
-                        <p>Сейчас увлекаюсь веб-разработкой и изучаю современные технологии. 
-                        В свободное время занимаюсь созданием пет-проектов и изучаю новые фреймворки.</p>
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0">
+                            <i class="bi bi-person-circle text-primary"></i>
+                            Обо мне
+                        </h3>
                     </div>
-                </section>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Я родился в Москве в 70-м на краю города. Глупость рано ударила в голову. 
+                            В четыре активно ругался. Потом школа, форма, драки, клей. Так я становился сильней. 
+                            Воровал деньги в раздевалке.
+                        </p>
+                        <p class="card-text">
+                            Сейчас увлекаюсь веб-разработкой и изучаю современные технологии. 
+                            В свободное время занимаюсь созданием пет-проектов и изучаю новые фреймворки.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-                <!-- Skills Section -->
-                <section class="skills">
-                    <h2 class="section-title">Мои навыки</h2>
-                    <div class="skills_grid">
-                        <div class="skill">
-                            <div class="skill_header">
-                                <span class="skill_name">HTML/CSS</span>
-                                <span class="skill_percent">85%</span>
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0">
+                            <i class="bi bi-tools text-primary"></i>
+                            Мои навыки
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>HTML/CSS</span>
+                                        <span class="text-primary">85%</span>
+                                    </div>
+                                    <div class="progress skill-progress">
+                                        <div class="progress-bar bg-primary" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>JavaScript</span>
+                                        <span class="text-primary">70%</span>
+                                    </div>
+                                    <div class="progress skill-progress">
+                                        <div class="progress-bar bg-success" style="width: 70%"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill_progress">
-                                <div class="skill_progress-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill_header">
-                                <span class="skill_name">JavaScript</span>
-                                <span class="skill_percent">70%</span>
-                            </div>
-                            <div class="skill_progress">
-                                <div class="skill_progress-bar" style="width: 70%"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill_header">
-                                <span class="skill_name">Bootstrap</span>
-                                <span class="skill_percent">80%</span>
-                            </div>
-                            <div class="skill_progress">
-                                <div class="skill_progress-bar" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill_header">
-                                <span class="skill_name">React</span>
-                                <span class="skill_percent">65%</span>
-                            </div>
-                            <div class="skill_progress">
-                                <div class="skill_progress-bar" style="width: 65%"></div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Bootstrap</span>
+                                        <span class="text-primary">80%</span>
+                                    </div>
+                                    <div class="progress skill-progress">
+                                        <div class="progress-bar bg-info" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>React</span>
+                                        <span class="text-primary">65%</span>
+                                    </div>
+                                    <div class="progress skill-progress">
+                                        <div class="progress-bar bg-warning" style="width: 65%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- Experience Section -->
-                <section class="experience">
-                    <h2 class="section-title">Мой опыт работы</h2>
-                    <div class="experience_grid">
-                        <div class="experience_card">
-                            <h3 class="experience_title">Frontend разработчик</h3>
-                            <p class="experience_description">Разработка пользовательских интерфейсов с использованием современных технологий.</p>
-                        </div>
-                        <div class="experience_card">
-                            <h3 class="experience_title">Веб-дизайнер</h3>
-                            <p class="experience_description">Создание дизайна и прототипов для веб-приложений.</p>
-                        </div>
-                        <div class="experience_card">
-                            <h3 class="experience_title">Fullstack разработчик</h3>
-                            <p class="experience_description">Разработка полного стека приложений от фронтенда до бэкенда.</p>
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0">
+                            <i class="bi bi-briefcase text-primary"></i>
+                            Мой опыт работы
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="card h-100 border-primary">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary">Frontend разработчик</h5>
+                                        <p class="card-text small text-muted">
+                                            Разработка пользовательских интерфейсов с использованием современных технологий.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-success">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-success">Веб-дизайнер</h5>
+                                        <p class="card-text small text-muted">
+                                            Создание дизайна и прототипов для веб-приложений.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-info">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-info">Fullstack разработчик</h5>
+                                        <p class="card-text small text-muted">
+                                            Разработка полного стека приложений от фронтенда до бэкенда.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
+
+            <div class="text-center mb-5">
+                <a href="pages/contacts.html" class="btn btn-primary btn-lg me-3">
+                    <i class="bi bi-telephone me-2"></i>Перейти к контактам
+                </a>
+                <a href="assets/resume.pdf" class="btn btn-success btn-lg download-btn" download>
+                    <i class="bi bi-download me-2"></i>Скачать резюме
+                </a>
             </div>
         </main>
 
-        <!-- Footer -->
-        <footer class="footer">
+        <footer class="bg-dark text-white py-4 mt-5">
             <div class="container">
-                <div class="footer_content">
-                    <p class="footer_copyright">&copy; 2025 Портфолио студента. Все права защищены.</p>
-                    <div class="footer_links">
-                        <a href="pages/contacts.html" class="footer_link">Контакты</a>
-                        <a href="#" class="footer_link">Политика конфиденциальности</a>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Портфолио студента. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="pages/contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
