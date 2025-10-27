@@ -7,15 +7,83 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+        }
+        
         .progress-record {
             border-left: 4px solid #0d6efd;
             padding-left: 1rem;
+            margin-bottom: 1.5rem;
         }
+        
         .progress-record.completed {
             border-left-color: #198754;
         }
+        
         .progress-record.in-progress {
             border-left-color: #ffc107;
+        }
+        
+        .card {
+            box-shadow: var(--shadow-md);
+            border: none;
+        }
+        
+        /* Адаптивные стили */
+        @media (max-width: 768px) {
+            .diary-layout {
+                flex-direction: column;
+            }
+            
+            .progress-section, .courses-section {
+                width: 100%;
+            }
+            
+            .progress-record {
+                padding: 1rem;
+                border-left: none;
+                border-top: 4px solid #0d6efd;
+            }
+            
+            .progress-record.completed {
+                border-top-color: #198754;
+            }
+            
+            .progress-record.in-progress {
+                border-top-color: #ffc107;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .progress-record {
+                padding: 0.75rem;
+            }
+            
+            .badge {
+                font-size: 0.7rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .modal-dialog {
+                margin: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -75,8 +143,8 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-8">
+            <div class="row diary-layout">
+                <div class="col-md-8 progress-section">
                     <div class="card shadow-sm mb-4">
                         <div class="card-header bg-light">
                             <h3 class="card-title h5 mb-0">
@@ -119,7 +187,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 courses-section">
                     <div class="card shadow-sm">
                         <div class="card-header bg-light">
                             <h3 class="card-title h5 mb-0">

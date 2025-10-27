@@ -7,20 +7,87 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+        }
+        
         .project-card {
             transition: transform 0.2s;
             height: 100%;
+            box-shadow: var(--shadow-md);
+            border: none;
         }
+        
         .project-card:hover {
             transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
+        
         .project-img {
             height: 200px;
             object-fit: cover;
         }
+        
         .filter-btn.active {
             background-color: #0d6efd;
             color: white;
+        }
+        
+        /* Адаптивные стили */
+        @media (max-width: 768px) {
+            .project-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            .filter-buttons {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+            
+            .filter-btn {
+                flex: 1;
+                min-width: 120px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-img {
+                height: 150px;
+            }
+            
+            .filter-btn {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .badge {
+                font-size: 0.7rem;
+            }
+            
+            .modal-dialog {
+                margin: 0.5rem;
+            }
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
     </style>
 </head>
@@ -89,7 +156,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <div class="d-flex flex-wrap gap-2">
+                            <div class="d-flex flex-wrap gap-2 filter-buttons">
                                 <button class="btn btn-outline-primary filter-btn active" data-filter="all">Все</button>
                                 <button class="btn btn-outline-primary filter-btn" data-filter="html">HTML</button>
                                 <button class="btn btn-outline-primary filter-btn" data-filter="js">JavaScript</button>
@@ -101,7 +168,7 @@
             </div>
 
             
-            <div class="row g-4" id="projectsGrid">
+            <div class="row g-4 projects-grid" id="projectsGrid">
                 
                 <div class="col-md-4" data-category="html">
                     <div class="card project-card shadow-sm" data-bs-toggle="modal" data-bs-target="#projectModal1">
