@@ -1,9 +1,11 @@
+[file name]: index.html
+[file content begin]
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная - StudentDev Portfolio</title>
+    <title>Главная - Портфолио</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
@@ -11,9 +13,10 @@
         <!-- Header -->
         <header class="header">
             <div class="container">
-                <div class="header__content">
-                    <h1 class="header__title">Алексей Петров</h1>
-                    <p class="header__subtitle">Студент-разработчик</p>
+                <div class="header_content">
+                    <h1 class="header_title">Музраев Санджи</h1>
+                    <p class="header_subtitle">Студент-разработчик</p>
+                    <span class="badge">ЭФБО-16-24</span>
                 </div>
             </div>
         </header>
@@ -21,18 +24,18 @@
         <!-- Navigation -->
         <nav class="nav">
             <div class="container">
-                <ul class="nav__list">
-                    <li class="nav__item nav__item--active">
-                        <a href="index.html" class="nav__link">Главная</a>
+                <ul class="nav_list">
+                    <li class="nav_item nav_item--active">
+                        <a href="index.html" class="nav_link">Главная</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="pages/projects.html" class="nav__link">Проекты</a>
+                    <li class="nav_item">
+                        <a href="pages/projects.html" class="nav_link">Проекты</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="pages/diary.html" class="nav__link">Дневник</a>
+                    <li class="nav_item">
+                        <a href="pages/diary.html" class="nav_link">Дневник</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="pages/contacts.html" class="nav__link">Контакты</a>
+                    <li class="nav_item">
+                        <a href="pages/contacts.html" class="nav_link">Контакты</a>
                     </li>
                 </ul>
             </div>
@@ -43,116 +46,101 @@
             <div class="container">
                 <!-- Hero Section -->
                 <section class="hero">
-                    <div class="hero__content">
-                        <div class="hero__image">
-                            <img src="images/photo.jpg" alt="Фото студента" class="hero__photo">
+                    <div class="hero_content">
+                        <div class="hero_image">
+                            <img src="images/photo.png" alt="Фото студента" class="hero_photo">
                         </div>
-                        <div class="hero__info">
-                            <h2 class="hero__greeting">Привет! Я студент</h2>
-                            <p class="hero__description">
-                                Факультет информационных технологий, группа ИТ-21-1<br>
-                                Увлекаюсь веб-разработкой и созданием современных интерфейсов
+                        <div class="hero_info">
+                            <h2 class="hero_greeting">Привет! Я студент</h2>
+                            <p class="hero_description">
+                                Факультет ИПТИП, группа ЭФБО-16-24<br>
+                                Специальность "Фронтенд и бэкенд разработка"
                             </p>
-                            <button class="button button--primary hero__button">
-                                Скачать резюме
-                            </button>
+                            <div class="hero_actions">
+                                <button class="button button--primary">Скачать резюме</button>
+                                <a href="pages/contacts.html" class="button button--outline">Связаться</a>
+                            </div>
+                            <div class="hero_tags">
+                                <span class="tag">HTML/CSS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Bootstrap</span>
+                                <span class="tag">React</span>
+                            </div>
                         </div>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section class="about">
+                    <h2 class="section-title">Обо мне</h2>
+                    <div class="about_content">
+                        <p>Я родился в Москве в 70-м на краю города. Глупость рано ударила в голову. 
+                        В четыре активно ругался. Потом школа, форма, драки, клей. Так я становился сильней. 
+                        Воровал деньги в раздевалке.</p>
+                        <p>Сейчас увлекаюсь веб-разработкой и изучаю современные технологии. 
+                        В свободное время занимаюсь созданием пет-проектов и изучаю новые фреймворки.</p>
                     </div>
                 </section>
 
                 <!-- Skills Section -->
                 <section class="skills">
                     <h2 class="section-title">Мои навыки</h2>
-                    <div class="skills__grid">
+                    <div class="skills_grid">
                         <div class="skill">
-                            <div class="skill__header">
-                                <span class="skill__name">HTML/CSS</span>
-                                <span class="skill__percent">90%</span>
+                            <div class="skill_header">
+                                <span class="skill_name">HTML/CSS</span>
+                                <span class="skill_percent">85%</span>
                             </div>
-                            <div class="skill__progress">
-                                <div class="skill__progress-bar" style="width: 90%"></div>
+                            <div class="skill_progress">
+                                <div class="skill_progress-bar" style="width: 85%"></div>
                             </div>
                         </div>
                         <div class="skill">
-                            <div class="skill__header">
-                                <span class="skill__name">JavaScript</span>
-                                <span class="skill__percent">80%</span>
+                            <div class="skill_header">
+                                <span class="skill_name">JavaScript</span>
+                                <span class="skill_percent">70%</span>
                             </div>
-                            <div class="skill__progress">
-                                <div class="skill__progress-bar" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill__header">
-                                <span class="skill__name">Bootstrap</span>
-                                <span class="skill__percent">85%</span>
-                            </div>
-                            <div class="skill__progress">
-                                <div class="skill__progress-bar" style="width: 85%"></div>
+                            <div class="skill_progress">
+                                <div class="skill_progress-bar" style="width: 70%"></div>
                             </div>
                         </div>
                         <div class="skill">
-                            <div class="skill__header">
-                                <span class="skill__name">React</span>
-                                <span class="skill__percent">60%</span>
+                            <div class="skill_header">
+                                <span class="skill_name">Bootstrap</span>
+                                <span class="skill_percent">80%</span>
                             </div>
-                            <div class="skill__progress">
-                                <div class="skill__progress-bar" style="width: 60%"></div>
+                            <div class="skill_progress">
+                                <div class="skill_progress-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_header">
+                                <span class="skill_name">React</span>
+                                <span class="skill_percent">65%</span>
+                            </div>
+                            <div class="skill_progress">
+                                <div class="skill_progress-bar" style="width: 65%"></div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Projects Preview -->
-                <section class="projects-preview">
-                    <h2 class="section-title">Лучшие проекты</h2>
-                    <div class="projects-preview__grid">
-                        <article class="project-card">
-                            <div class="project-card__image">
-                                <img src="images/project1.jpg" alt="Личный сайт">
-                            </div>
-                            <div class="project-card__content">
-                                <h3 class="project-card__title">Личный сайт</h3>
-                                <p class="project-card__description">
-                                    Адаптивный сайт-портфолио на HTML и CSS
-                                </p>
-                                <div class="project-card__tags">
-                                    <span class="tag">HTML</span>
-                                    <span class="tag">CSS</span>
-                                    <span class="tag">JavaScript</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="project-card">
-                            <div class="project-card__image">
-                                <img src="images/project2.jpg" alt="Todo приложение">
-                            </div>
-                            <div class="project-card__content">
-                                <h3 class="project-card__title">Todo приложение</h3>
-                                <p class="project-card__description">
-                                    Приложение для управления задачами
-                                </p>
-                                <div class="project-card__tags">
-                                    <span class="tag">JavaScript</span>
-                                    <span class="tag">LocalStorage</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="project-card">
-                            <div class="project-card__image">
-                                <img src="images/project3.jpg" alt="Интернет-магазин">
-                            </div>
-                            <div class="project-card__content">
-                                <h3 class="project-card__title">Интернет-магазин</h3>
-                                <p class="project-card__description">
-                                    Прототип магазина с корзиной товаров
-                                </p>
-                                <div class="project-card__tags">
-                                    <span class="tag">React</span>
-                                    <span class="tag">API</span>
-                                </div>
-                            </div>
-                        </article>
+                <!-- Experience Section -->
+                <section class="experience">
+                    <h2 class="section-title">Мой опыт работы</h2>
+                    <div class="experience_grid">
+                        <div class="experience_card">
+                            <h3 class="experience_title">Frontend разработчик</h3>
+                            <p class="experience_description">Разработка пользовательских интерфейсов с использованием современных технологий.</p>
+                        </div>
+                        <div class="experience_card">
+                            <h3 class="experience_title">Веб-дизайнер</h3>
+                            <p class="experience_description">Создание дизайна и прототипов для веб-приложений.</p>
+                        </div>
+                        <div class="experience_card">
+                            <h3 class="experience_title">Fullstack разработчик</h3>
+                            <p class="experience_description">Разработка полного стека приложений от фронтенда до бэкенда.</p>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -161,11 +149,11 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
-                <div class="footer__content">
-                    <p class="footer__copyright">&copy; 2025 StudentDev Portfolio</p>
-                    <div class="footer__links">
-                        <a href="mailto:student@edu.ru" class="footer__link">student@edu.ru</a>
-                        <a href="https://github.com" class="footer__link">GitHub</a>
+                <div class="footer_content">
+                    <p class="footer_copyright">&copy; 2025 Портфолио студента. Все права защищены.</p>
+                    <div class="footer_links">
+                        <a href="pages/contacts.html" class="footer_link">Контакты</a>
+                        <a href="#" class="footer_link">Политика конфиденциальности</a>
                     </div>
                 </div>
             </div>
@@ -173,3 +161,4 @@
     </div>
 </body>
 </html>
+[file content end]
