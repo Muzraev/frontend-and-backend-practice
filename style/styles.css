@@ -115,6 +115,46 @@ body {
   margin-top: auto;
 }
 
+.card {
+  background: var(--color-surface);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow);
+  padding: var(--space-lg);
+}
+
+.button {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.button--primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.button--primary:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.button--secondary {
+  background: var(--color-secondary);
+  color: white;
+}
+
+.button--secondary:hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
   :root {
     --font-size-xl: 20px;
@@ -130,5 +170,24 @@ body {
   
   .content {
     padding: var(--space-md);
+  }
+  
+  .header {
+    padding: var(--space-lg);
+  }
+  
+  .header h1 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-xl: 1.5rem;
+    --space-2xl: 2rem;
+  }
+  
+  .content {
+    padding: var(--space-sm);
   }
 }

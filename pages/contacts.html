@@ -4,216 +4,237 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты - Портфолио</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles.css">
     <style>
         .contact-card {
             transition: transform 0.2s;
             height: 100%;
+            background: var(--color-surface);
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-lg);
+            text-align: center;
+            box-shadow: var(--shadow);
         }
         .contact-card:hover {
             transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
         .contact-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: var(--color-surface);
+            padding: var(--space-xl);
+            border-radius: var(--border-radius-lg);
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
+            color: var(--color-text);
+        }
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: var(--space-md);
+            border: 2px solid var(--color-border);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: var(--font-size-base);
+        }
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .social-btn {
+            padding: var(--space-sm);
+            border: 2px solid var(--color-border);
+            border-radius: var(--border-radius);
+            background: transparent;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+        .social-btn:hover {
+            transform: translateY(-2px);
+        }
     </style>
 </head>
-<body class="bg-light">
-    <div class="container-fluid p-0">
-        <header class="bg-primary text-white py-4">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col">
-                        <h1 class="h3 mb-1">Моё Портфолио</h1>
-                        <p class="mb-0 opacity-75">Студент разработчик</p>
-                    </div>
-                    <div class="col-auto">
-                        <span class="badge bg-light text-primary">ЭФБО-16-24</span>
-                    </div>
-                </div>
-            </div>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Моё Портфолио</h1>
+            <p>Студент разработчик</p>
+            <span class="badge" style="background: var(--color-primary); display: inline-block; padding: var(--space-xs) var(--space-sm); color: white; border-radius: var(--border-radius); font-size: 0.8rem;">ЭФБО-16-24</span>
         </header>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">
-                                <i class="bi bi-house me-1"></i>Главная
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="projects.html">
-                                <i class="bi bi-folder me-1"></i>Проекты
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="diary.html">
-                                <i class="bi bi-journal me-1"></i>Дневник
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="contacts.html">
-                                <i class="bi bi-telephone me-1"></i>Контакты
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <!-- Navigation -->
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Проекты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="diary.html">Дневник</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="contacts.html">Контакты</a>
+                </li>
+            </ul>
         </nav>
 
-        <main class="container my-4">
-            <div class="row mb-4">
-                <div class="col">
-                    <h2 class="text-center text-primary">Контакты</h2>
-                    <p class="text-center text-muted">Свяжитесь со мной удобным для вас способом</p>
+        <!-- Main Content -->
+        <main class="content">
+            <div style="text-align: center; margin-bottom: var(--space-xl);">
+                <h2 style="color: var(--color-primary); margin-bottom: var(--space-sm);">Контакты</h2>
+                <p style="color: var(--color-text-light);">Свяжитесь со мной удобным для вас способом</p>
+            </div>
+
+            <!-- Contact Cards -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg); margin-bottom: var(--space-xl);">
+                <div class="contact-card">
+                    <div class="contact-icon" style="color: var(--color-primary);">✉️</div>
+                    <h3 style="margin-bottom: var(--space-sm);">Электронная почта</h3>
+                    <p style="margin-bottom: var(--space-md); color: var(--color-text-light);">mirea@mirea.ru</p>
+                    <a href="mailto:asdabv@ninea.ru" style="padding: var(--space-sm) var(--space-md); background: transparent; color: var(--color-primary); border: 2px solid var(--color-primary); border-radius: var(--border-radius); text-decoration: none; transition: var(--transition);">Написать</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon" style="color: var(--color-secondary);">📍</div>
+                    <h3 style="margin-bottom: var(--space-sm);">Физический адрес</h3>
+                    <p style="color: var(--color-text-light);">г. Москва, ул. Пушкина, д. Колотушкина</p>
                 </div>
             </div>
 
-            <div class="row mb-5">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm contact-card">
-                        <div class="card-body text-center">
-                            <i class="bi bi-envelope contact-icon text-primary"></i>
-                            <h5 class="card-title">Электронная почта</h5>
-                            <p class="card-text">mirea@mirea.ru</p>
-                            <a href="mailto:asdabv@ninea.ru" class="btn btn-outline-primary">Написать</a>
-                        </div>
-                    </div>
+            <!-- Additional Contact Info -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-lg); margin-bottom: var(--space-xl);">
+                <div class="contact-card">
+                    <div class="contact-icon" style="color: var(--color-accent);">📞</div>
+                    <h4 style="margin-bottom: var(--space-sm);">Телефон</h4>
+                    <p style="color: var(--color-text-light);">+7 (495) 123-45-67</p>
                 </div>
                 
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm contact-card">
-                        <div class="card-body text-center">
-                            <i class="bi bi-geo-alt contact-icon text-success"></i>
-                            <h5 class="card-title">Физический адрес</h5>
-                            <p class="card-text">г. Москва, ул. Пушкина, д. Колотушкина</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-md-4 mb-3">
-                    <div class="card h-100 shadow-sm contact-card">
-                        <div class="card-body text-center">
-                            <i class="bi bi-telephone contact-icon text-info"></i>
-                            <h5 class="card-title">Телефон</h5>
-                            <p class="card-text">+7 (495) 123-45-67</p>
-                        </div>
-                    </div>
+                <div class="contact-card">
+                    <div class="contact-icon" style="color: #f59e0b;">⏰</div>
+                    <h4 style="margin-bottom: var(--space-sm);">Время работы</h4>
+                    <p style="color: var(--color-text-light);">Пн-Пт: 9:00-18:00</p>
                 </div>
                 
-                <div class="col-md-4 mb-3">
-                    <div class="card h-100 shadow-sm contact-card">
-                        <div class="card-body text-center">
-                            <i class="bi bi-clock contact-icon text-warning"></i>
-                            <h5 class="card-title">Время работы</h5>
-                            <p class="card-text">Пн-Пт: 9:00-18:00</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-3">
-                    <div class="card h-100 shadow-sm contact-card">
-                        <div class="card-body text-center">
-                            <i class="bi bi-people contact-icon text-danger"></i>
-                            <h5 class="card-title">Социальные сети</h5>
-                            <div class="d-flex justify-content-center gap-2 mt-3">
-                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="bi bi-vk"></i></a>
-                                <a href="#" class="btn btn-outline-info btn-sm"><i class="bi bi-telegram"></i></a>
-                                <a href="#" class="btn btn-outline-success btn-sm"><i class="bi bi-whatsapp"></i></a>
-                            </div>
-                        </div>
+                <div class="contact-card">
+                    <div class="contact-icon" style="color: #ef4444;">👥</div>
+                    <h4 style="margin-bottom: var(--space-sm);">Социальные сети</h4>
+                    <div style="display: flex; justify-content: center; gap: var(--space-sm); margin-top: var(--space-md);">
+                        <button class="social-btn" style="color: #0077ff; border-color: #0077ff;">VK</button>
+                        <button class="social-btn" style="color: #0088cc; border-color: #0088cc;">TG</button>
+                        <button class="social-btn" style="color: #25d366; border-color: #25d366;">WA</button>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center mb-5">
-                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">
-                    <i class="bi bi-chat-dots me-2"></i>Связаться с нами
+            <!-- CTA Button -->
+            <div style="text-align: center;">
+                <button onclick="openModal('contactModal')" style="padding: var(--space-md) var(--space-lg); background: var(--color-primary); color: white; border: none; border-radius: var(--border-radius); cursor: pointer; font-size: var(--font-size-base);">
+                    💬 Связаться с нами
                 </button>
             </div>
         </main>
 
-        <footer class="bg-dark text-white py-4 mt-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <p class="mb-0">&copy; 2025 Портфолио студента. Все права защищены.</p>
-                    </div>
-                    <div class="col-md-6 text-md-end">
-                        <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
-                        <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
-                    </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
+                <p>&copy; 2025 Портфолио студента. Все права защищены.</p>
+                <div>
+                    <a href="contacts.html" style="color: white; text-decoration: none; margin-right: var(--space-lg);">Контакты</a>
+                    <a href="#" style="color: white; text-decoration: none;">Политика конфиденциальности</a>
                 </div>
             </div>
         </footer>
     </div>
 
     <!-- Contact Modal -->
-    <div class="modal fade" id="contactModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title">
-                        <i class="bi bi-chat-dots me-2"></i>Форма обратной связи
-                    </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div style="background: var(--color-primary); color: white; padding: var(--space-lg); margin: -var(--space-xl) -var(--space-xl) var(--space-xl); border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;">
+                <h3 style="margin: 0; display: flex; align-items: center;">
+                    <span style="margin-right: var(--space-sm);">💬</span>Форма обратной связи
+                </h3>
+            </div>
+            
+            <form id="feedbackForm">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin-bottom: var(--space-lg);">
+                    <div class="form-group">
+                        <label class="form-label">Имя <span style="color: #ef4444;">*</span></label>
+                        <input type="text" class="form-input" required placeholder="Введите ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Телефон <span style="color: #ef4444;">*</span></label>
+                        <input type="tel" class="form-input" required placeholder="+7 (XXX) XXX-XX-XX">
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <form id="feedbackForm">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="name" class="form-label">Имя <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="name" name="name" required placeholder="Введите ваше имя">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="phone" class="form-label">Телефон <span class="text-danger">*</span></label>
-                                <input type="tel" class="form-control" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
-                            </div>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Электронная почта <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" id="email" name="email" required placeholder="example@mail.ru">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Категория обращения <span class="text-danger">*</span></label>
-                            <select class="form-select" id="category" name="category" required>
-                                <option value="">Выберите категорию</option>
-                                <option value="technical">Техническая поддержка</option>
-                                <option value="commercial">Коммерческое предложение</option>
-                                <option value="cooperation">Сотрудничество</option>
-                                <option value="complaint">Жалоба</option>
-                                <option value="suggestion">Предложение</option>
-                                <option value="other">Другое</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Текст обращения <span class="text-danger">*</span></label>
-                            <textarea class="form-control" id="message" name="message" rows="4" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
-                        </div>
-                    </form>
+                
+                <div class="form-group">
+                    <label class="form-label">Электронная почта <span style="color: #ef4444;">*</span></label>
+                    <input type="email" class="form-input" required placeholder="example@mail.ru">
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+                
+                <div class="form-group">
+                    <label class="form-label">Категория обращения <span style="color: #ef4444;">*</span></label>
+                    <select class="form-select" required>
+                        <option value="">Выберите категорию</option>
+                        <option value="technical">Техническая поддержка</option>
+                        <option value="commercial">Коммерческое предложение</option>
+                        <option value="cooperation">Сотрудничество</option>
+                        <option value="complaint">Жалоба</option>
+                        <option value="suggestion">Предложение</option>
+                        <option value="other">Другое</option>
+                    </select>
                 </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Текст обращения <span style="color: #ef4444;">*</span></label>
+                    <textarea class="form-textarea" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                </div>
+            </form>
+            
+            <div style="display: flex; gap: var(--space-sm); justify-content: flex-end; margin-top: var(--space-lg);">
+                <button onclick="closeModal('contactModal')" style="padding: var(--space-sm) var(--space-md); background: var(--color-border); color: var(--color-text); border: none; border-radius: var(--border-radius); cursor: pointer;">Отмена</button>
+                <button onclick="submitForm()" style="padding: var(--space-sm) var(--space-md); background: var(--color-primary); color: white; border: none; border-radius: var(--border-radius); cursor: pointer;">Отправить</button>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
         function submitForm() {
             const form = document.getElementById('feedbackForm');
             
@@ -235,12 +256,18 @@
             
             alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
             
-            const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
-            modal.hide();
-            
+            closeModal('contactModal');
             form.reset();
         }
-        
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        });
+
+        // Prevent form submission on Enter key in non-textarea fields
         document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
             if (event.key === 'Enter' && event.target.type !== 'textarea') {
                 event.preventDefault();
