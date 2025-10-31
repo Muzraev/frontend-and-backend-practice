@@ -3,248 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты - Портфолио</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <style>
-        .contact-card {
-            transition: transform 0.2s;
-            height: 100%;
-        }
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
-        .contact-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-    </style>
+    <title>Контакты - Портфолио Музраев Санджи</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
-<body class="bg-light">
-    <div class="container-fluid p-0">
-        <header class="bg-primary text-white py-4">
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="header">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col">
-                        <h1 class="h3 mb-1">Моё Портфолио</h1>
-                        <p class="mb-0 opacity-75">Студент разработчик</p>
-                    </div>
-                    <div class="col-auto">
-                        <span class="badge bg-light text-primary">ЭФБО-16-24</span>
-                    </div>
+                <div class="header_content">
+                    <h1 class="header_title">Музраев Санджи</h1>
+                    <p class="header_subtitle">Студент-разработчик</p>
                 </div>
             </div>
         </header>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Navigation -->
+        <nav class="nav">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">
-                                <i class="bi bi-house me-1"></i>Главная
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="projects.html">
-                                <i class="bi bi-folder me-1"></i>Проекты
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="diary.html">
-                                <i class="bi bi-journal me-1"></i>Дневник
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="contacts.html">
-                                <i class="bi bi-telephone me-1"></i>Контакты
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="nav_list">
+                    <li class="nav_item">
+                        <a href="../index.html" class="nav_link">Главная</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="projects.html" class="nav_link">Проекты</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="diary.html" class="nav_link">Дневник</a>
+                    </li>
+                    <li class="nav_item nav_item--active">
+                        <a href="contacts.html" class="nav_link">Контакты</a>
+                    </li>
+                </ul>
             </div>
         </nav>
 
-        <main class="container my-4">
-            <div class="row mb-4">
-                <div class="col">
-                    <h2 class="text-center text-primary">Контакты</h2>
-                    <p class="text-center text-muted">Свяжитесь со мной удобным для вас способом</p>
-                </div>
-            </div>
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <h2 class="section-title">Контакты</h2>
+                
+                <div class="contacts_content">
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <h3 class="contact-info_title">Форма обратной связи</h3>
+                        <form class="form">
+                            <div class="form_group">
+                                <label for="name" class="form_label">Имя <span class="text-danger">*</span></label>
+                                <input type="text" id="name" class="form_input" required placeholder="Введите ваше имя">
+                            </div>
+                            
+                            <div class="form_group">
+                                <label for="phone" class="form_label">Телефон <span class="text-danger">*</span></label>
+                                <input type="tel" id="phone" class="form_input" required placeholder="+7 (XXX) XXX-XX-XX">
+                            </div>
+                            
+                            <div class="form_group">
+                                <label for="email" class="form_label">Электронная почта <span class="text-danger">*</span></label>
+                                <input type="email" id="email" class="form_input" required placeholder="example@mail.ru">
+                            </div>
+                            
+                            <div class="form_group">
+                                <label for="category" class="form_label">Категория обращения <span class="text-danger">*</span></label>
+                                <select id="category" class="form_input" required>
+                                    <option value="">Выберите категорию</option>
+                                    <option value="technical">Техническая поддержка</option>
+                                    <option value="commercial">Коммерческое предложение</option>
+                                    <option value="cooperation">Сотрудничество</option>
+                                    <option value="complaint">Жалоба</option>
+                                    <option value="suggestion">Предложение</option>
+                                    <option value="other">Другое</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form_group">
+                                <label for="message" class="form_label">Текст обращения <span class="text-danger">*</span></label>
+                                <textarea id="message" class="form_textarea" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="button button--primary form_button">Отправить сообщение</button>
+                        </form>
+                    </div>
 
-            <div class="row mb-5">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm contact-card">
-                        <div class="card-body text-center">
-                            <i class="bi bi-envelope contact-icon text-primary"></i>
-                            <h5 class="card-title">Электронная почта</h5>
-                            <p class="card-text">mirea@mirea.ru</p>
-                            <a href="mailto:asdabv@ninea.ru" class="btn btn-outline-primary">Написать</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow-sm contact-card">
-                        <div class="card-body text-center">
-                            <i class="bi bi-geo-alt contact-icon text-success"></i>
-                            <h5 class="card-title">Физический адрес</h5>
-                            <p class="card-text">г. Москва, ул. Пушкина, д. Колотушкина</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <h3 class="contact-info_title">Контактная информация</h3>
+                        <div class="contact-info_items">
+                            <div class="contact-item">
+                                <div class="contact-item_icon">📧</div>
+                                <div class="contact-item_content">
+                                    <h4 class="contact-item_title">Электронная почта</h4>
+                                    <p class="contact-item_value">mirea@mirea.ru</p>
+                                </div>
+                            </div>
 
-            <div class="row mb-5">
-                <div class="col-md-4 mb-3">
-                    <div class="card h-100 shadow-sm contact-card">
-                        <div class="card-body text-center">
-                            <i class="bi bi-telephone contact-icon text-info"></i>
-                            <h5 class="card-title">Телефон</h5>
-                            <p class="card-text">+7 (495) 123-45-67</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-3">
-                    <div class="card h-100 shadow-sm contact-card">
-                        <div class="card-body text-center">
-                            <i class="bi bi-clock contact-icon text-warning"></i>
-                            <h5 class="card-title">Время работы</h5>
-                            <p class="card-text">Пн-Пт: 9:00-18:00</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-3">
-                    <div class="card h-100 shadow-sm contact-card">
-                        <div class="card-body text-center">
-                            <i class="bi bi-people contact-icon text-danger"></i>
-                            <h5 class="card-title">Социальные сети</h5>
-                            <div class="d-flex justify-content-center gap-2 mt-3">
-                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="bi bi-vk"></i></a>
-                                <a href="#" class="btn btn-outline-info btn-sm"><i class="bi bi-telegram"></i></a>
-                                <a href="#" class="btn btn-outline-success btn-sm"><i class="bi bi-whatsapp"></i></a>
+                            <div class="contact-item">
+                                <div class="contact-item_icon">📞</div>
+                                <div class="contact-item_content">
+                                    <h4 class="contact-item_title">Телефон</h4>
+                                    <p class="contact-item_value">+7 (495) 123-45-67</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-item_icon">📍</div>
+                                <div class="contact-item_content">
+                                    <h4 class="contact-item_title">Адрес</h4>
+                                    <p class="contact-item_value">г. Москва, ул. Пушкина, д. Колотушкина</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-item_icon">🕒</div>
+                                <div class="contact-item_content">
+                                    <h4 class="contact-item_title">Время работы</h4>
+                                    <p class="contact-item_value">Пн-Пт: 9:00-18:00<br>Сб-Вс: выходной</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-item_icon">🌐</div>
+                                <div class="contact-item_content">
+                                    <h4 class="contact-item_title">Социальные сети</h4>
+                                    <p class="contact-item_value">
+                                        <a href="#" style="color: var(--primary-color); text-decoration: none;">VK</a> • 
+                                        <a href="#" style="color: var(--primary-color); text-decoration: none;">Telegram</a> • 
+                                        <a href="#" style="color: var(--primary-color); text-decoration: none;">GitHub</a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="text-center mb-5">
-                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">
-                    <i class="bi bi-chat-dots me-2"></i>Связаться с нами
-                </button>
-            </div>
         </main>
 
-        <footer class="bg-dark text-white py-4 mt-5">
+        <!-- Footer -->
+        <footer class="footer">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <p class="mb-0">&copy; 2025 Портфолио студента. Все права защищены.</p>
-                    </div>
-                    <div class="col-md-6 text-md-end">
-                        <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
-                        <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
+                <div class="footer_content">
+                    <p class="footer_copyright">&copy; 2025 Портфолио студента</p>
+                    <div class="footer_links">
+                        <a href="mailto:mirea@mirea.ru" class="footer_link">mirea@mirea.ru</a>
+                        <a href="contacts.html" class="footer_link">Контакты</a>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- Contact Modal -->
-    <div class="modal fade" id="contactModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title">
-                        <i class="bi bi-chat-dots me-2"></i>Форма обратной связи
-                    </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="feedbackForm">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="name" class="form-label">Имя <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="name" name="name" required placeholder="Введите ваше имя">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="phone" class="form-label">Телефон <span class="text-danger">*</span></label>
-                                <input type="tel" class="form-control" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
-                            </div>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Электронная почта <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" id="email" name="email" required placeholder="example@mail.ru">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Категория обращения <span class="text-danger">*</span></label>
-                            <select class="form-select" id="category" name="category" required>
-                                <option value="">Выберите категорию</option>
-                                <option value="technical">Техническая поддержка</option>
-                                <option value="commercial">Коммерческое предложение</option>
-                                <option value="cooperation">Сотрудничество</option>
-                                <option value="complaint">Жалоба</option>
-                                <option value="suggestion">Предложение</option>
-                                <option value="other">Другое</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Текст обращения <span class="text-danger">*</span></label>
-                            <textarea class="form-control" id="message" name="message" rows="4" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function submitForm() {
-            const form = document.getElementById('feedbackForm');
+        // Обработка формы обратной связи
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.form');
             
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
-            }
-            
-            const formData = new FormData(form);
-            const data = {
-                name: formData.get('name'),
-                phone: formData.get('phone'),
-                email: formData.get('email'),
-                category: formData.get('category'),
-                message: formData.get('message')
-            };
-            
-            console.log('Данные формы:', data);
-            
-            alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
-            
-            const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
-            modal.hide();
-            
-            form.reset();
-        }
-        
-        document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter' && event.target.type !== 'textarea') {
-                event.preventDefault();
-            }
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+                
+                const formData = {
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    category: document.getElementById('category').value,
+                    message: document.getElementById('message').value
+                };
+                
+                console.log('Данные формы:', formData);
+                
+                alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
+                form.reset();
+            });
+
+            // Запрет отправки формы по Enter для всех полей кроме textarea
+            form.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' && event.target.type !== 'textarea') {
+                    event.preventDefault();
+                }
+            });
         });
     </script>
 </body>
