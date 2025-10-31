@@ -3,244 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Адаптивные изображения - Демо</title>
+    <title>Главная - Портфолио Музраев Санджи</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="page">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header_content">
+                    <h1 class="header_title">Музраев Санджи</h1>
+                    <p class="header_subtitle">Студент-разработчик</p>
+                </div>
+            </div>
+        </header>
 
+        <!-- Navigation -->
         <nav class="nav">
             <div class="container">
                 <ul class="nav_list">
                     <li class="nav_item nav_item--active">
                         <a href="index.html" class="nav_link">Главная</a>
                     </li>
-                    <li class="nav_item ">
-                        <a href="projects.html" class="nav_link">Проекты</a>
+                    <li class="nav_item">
+                        <a href="pages/projects.html" class="nav_link">Проекты</a>
                     </li>
                     <li class="nav_item">
-                        <a href="diary.html" class="nav_link">Дневник</a>
+                        <a href="pages/diary.html" class="nav_link">Дневник</a>
                     </li>
                     <li class="nav_item">
-                        <a href="contacts.html" class="nav_link">Контакты</a>
+                        <a href="pages/contacts.html" class="nav_link">Контакты</a>
                     </li>
                 </ul>
             </div>
         </nav>
-        
-        <header class="header">
-            <h1 class="header__title">Адаптивные изображения</h1>
-            <p class="header__subtitle">Демонстрация современных техник</p>
-        </header>
 
+        <!-- Main Content -->
         <main class="main">
-            <!-- Секция 1: Простое адаптивное изображение -->
-            <section class="section">
-                <h2 class="section__title">1. Базовое адаптивное изображение</h2>
-                <div class="image-container">
-                    <img src="images/landscape.jpg" 
-                         alt="Красивый пейзаж с горами и озером" 
-                         class="responsive-image"
-                         loading="lazy">
-                </div>
-                <div class="explanation">
-                    <h3>Что происходит:</h3>
-                    <ul>
-                        <li>Изображение занимает 100% ширины контейнера</li>
-                        <li>Высота автоматически рассчитывается для сохранения пропорций</li>
-                        <li>Работает на всех устройствах</li>
-                        <li>Lazy loading для оптимизации загрузки</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Секция 2: Picture element с разными версиями -->
-            <section class="section">
-                <h2 class="section__title">2. Picture element с форматами</h2>
-                <div class="image-container">
-                    <picture>
-                        <!-- WebP для современных браузеров -->
-                        <source srcset="images/portrait.webp" type="image/webp">
-                        <!-- JPEG для старых браузеров -->
-                        <source srcset="images/portrait.jpg" type="image/jpeg">
-                        <!-- Фолбэк -->
-                        <img src="images/portrait.jpg" 
-                             alt="Портрет человека" 
-                             class="responsive-image"
-                             loading="lazy">
-                    </picture>
-                </div>
-                <div class="explanation">
-                    <h3>Что происходит:</h3>
-                    <ul>
-                        <li>Браузер выбирает лучший формат (WebP или JPEG)</li>
-                        <li>Автоматическое переключение между форматами</li>
-                        <li>Фолбэк для старых браузеров</li>
-                        <li>WebP на 25-35% меньше по размеру</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Секция 3: Разные изображения для разных размеров экрана -->
-            <section class="section">
-                <h2 class="section__title">3. Разные изображения для разных экранов</h2>
-                <div class="image-container">
-                    <picture>
-                        <!-- Большое изображение для десктопов -->
-                        <source media="(min-width: 1200px)" 
-                                srcset="images/wide-desktop.jpg">
-                        <!-- Среднее для планшетов -->
-                        <source media="(min-width: 768px)" 
-                                srcset="images/tablet.jpg">
-                        <!-- Маленькое для мобильных -->
-                        <img src="images/mobile.jpg" 
-                             alt="Адаптивное изображение для разных устройств" 
-                             class="responsive-image"
-                             loading="lazy">
-                    </picture>
-                </div>
-                <div class="explanation">
-                    <h3>Что происходит:</h3>
-                    <ul>
-                        <li>Десктопы: wide-desktop.jpg (1200px+)</li>
-                        <li>Планшеты: tablet.jpg (768px-1199px)</li>
-                        <li>Мобильные: mobile.jpg (до 767px)</li>
-                        <li>Браузер сам выбирает подходящее изображение</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Секция 4: Retina display поддержка -->
-            <section class="section">
-                <h2 class="section__title">4. Поддержка Retina дисплеев</h2>
-                <div class="image-container">
-                    <img src="images/icon_1x.png"
-                         srcset="images/icon_1x.png 1x, images/icon_2x.png 2x"
-                         alt="Иконка с поддержкой Retina"
-                         class="retina-image"
-                         loading="lazy">
-                </div>
-                <div class="explanation">
-                    <h3>Что происходит:</h3>
-                    <ul>
-                        <li>Обычные экраны: icon_1x.png</li>
-                        <li>Retina экраны: icon_2x.png (в 2 раза четче)</li>
-                        <li>Автоматическое определение плотности пикселей</li>
-                        <li>Резкое изображение на всех устройствах</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Секция 5: Object-fit демонстрация -->
-            <section class="section">
-                <h2 class="section__title">5. Object-fit свойства</h2>
-                <div class="object-fit-demo">
-                    <div class="object-fit-item">
-                        <img src="images/square.jpg" 
-                             alt="Cover пример" 
-                             class="object-fit-cover"
-                             loading="lazy">
-                        <span>object-fit: cover</span>
-                    </div>
-                    <div class="object-fit-item">
-                        <img src="images/square.jpg" 
-                             alt="Contain пример" 
-                             class="object-fit-contain"
-                             loading="lazy">
-                        <span>object-fit: contain</span>
-                    </div>
-                    <div class="object-fit-item">
-                        <img src="images/square.jpg" 
-                             alt="Fill пример" 
-                             class="object-fit-fill"
-                             loading="lazy">
-                        <span>object-fit: fill</span>
-                    </div>
-                </div>
-                <div class="explanation">
-                    <h3>Что происходит:</h3>
-                    <ul>
-                        <li><strong>cover</strong> - заполняет контейнер, обрезая края</li>
-                        <li><strong>contain</strong> - вписывает полностью, могут быть поля</li>
-                        <li><strong>fill</strong> - растягивает, искажая пропорции</li>
-                        <li>Все изображения имеют одинаковые размеры контейнера</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Секция 6: Адаптивная галерея без обрезки -->
-            <section class="section">
-                <h2 class="section__title">6. Адаптивная галерея (без обрезки)</h2>
-                <div class="gallery">
-                    <div class="gallery__item">
-                        <div class="gallery__image-container">
-                            <img src="images/gallery1.jpg" 
-                                 alt="Галерея 1 - Горный пейзаж" 
-                                 class="gallery__image"
-                                 loading="lazy">
+            <div class="container">
+                <!-- Hero Section -->
+                <section class="hero">
+                    <div class="hero_content">
+                        <div class="hero_image">
+                            <picture>
+                                <!-- WebP для современных браузеров -->
+                                <source srcset="images/photo.webp" type="image/webp">
+                                <!-- Фолбэк для старых браузеров -->
+                                <img src="images/photo.png" 
+                                     alt="Фото студента" 
+                                     class="avatar"
+                                     loading="lazy"
+                                     width="200"
+                                     height="250">
+                            </picture>
+                        </div>
+                        <div class="hero_info">
+                            <h2 class="hero_greeting">Привет! Я студент</h2>
+                            <p class="hero_description">
+                                Факультет ИПТИП, группа ЭФБО-16-24<br>
+                                Специальность "Фронтенд и бэкенд разработка"
+                            </p>
+                            <button class="button button--primary hero_button">
+                                Скачать резюме
+                            </button>
                         </div>
                     </div>
-                    <div class="gallery__item">
-                        <div class="gallery__image-container">
-                            <img src="images/gallery2.jpg" 
-                                 alt="Галерея 2 - Городской вид" 
-                                 class="gallery__image"
-                                 loading="lazy">
+                </section>
+
+                <!-- Skills Section -->
+                <section class="skills">
+                    <h2 class="section-title">Мои навыки</h2>
+                    <div class="skills_grid">
+                        <div class="skill">
+                            <div class="skill_header">
+                                <span class="skill_name">HTML/CSS</span>
+                                <span class="skill_percent">85%</span>
+                            </div>
+                            <div class="skill_progress">
+                                <div class="skill_progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_header">
+                                <span class="skill_name">JavaScript</span>
+                                <span class="skill_percent">70%</span>
+                            </div>
+                            <div class="skill_progress">
+                                <div class="skill_progress-bar" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_header">
+                                <span class="skill_name">Bootstrap</span>
+                                <span class="skill_percent">80%</span>
+                            </div>
+                            <div class="skill_progress">
+                                <div class="skill_progress-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_header">
+                                <span class="skill_name">React</span>
+                                <span class="skill_percent">65%</span>
+                            </div>
+                            <div class="skill_progress">
+                                <div class="skill_progress-bar" style="width: 65%"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery__item">
-                        <div class="gallery__image-container">
-                            <img src="images/gallery3.jpg" 
-                                 alt="Галерея 3 - Природа" 
-                                 class="gallery__image"
-                                 loading="lazy">
-                        </div>
+                </section>
+
+                <!-- Projects Preview -->
+                <section class="projects-preview">
+                    <h2 class="section-title">Лучшие проекты</h2>
+                    <div class="projects-grid">
+                        <article class="project-card">
+                            <div class="project-image-container">
+                                <picture>
+                                    <source srcset="images/project1.webp" type="image/webp">
+                                    <img src="images/project1.jpg" 
+                                         alt="Личный сайт" 
+                                         class="project-image"
+                                         loading="lazy"
+                                         width="400"
+                                         height="200">
+                                </picture>
+                            </div>
+                            <div class="project-card_content">
+                                <h3 class="project-card_title">Личный сайт</h3>
+                                <p class="project-card_description">
+                                    Адаптивный сайт-портфолио на HTML и CSS
+                                </p>
+                                <div class="project-card_tags">
+                                    <span class="tag">HTML</span>
+                                    <span class="tag">CSS</span>
+                                    <span class="tag">JavaScript</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card">
+                            <div class="project-image-container">
+                                <picture>
+                                    <source srcset="images/project2.webp" type="image/webp">
+                                    <img src="images/project2.jpg" 
+                                         alt="Todo приложение" 
+                                         class="project-image"
+                                         loading="lazy"
+                                         width="400"
+                                         height="200">
+                                </picture>
+                            </div>
+                            <div class="project-card_content">
+                                <h3 class="project-card_title">Todo приложение</h3>
+                                <p class="project-card_description">
+                                    Приложение для управления задачами
+                                </p>
+                                <div class="project-card_tags">
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">LocalStorage</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card">
+                            <div class="project-image-container">
+                                <picture>
+                                    <source srcset="images/project3.webp" type="image/webp">
+                                    <img src="images/project3.jpg" 
+                                         alt="Интернет-магазин" 
+                                         class="project-image"
+                                         loading="lazy"
+                                         width="400"
+                                         height="200">
+                                </picture>
+                            </div>
+                            <div class="project-card_content">
+                                <h3 class="project-card_title">Интернет-магазин</h3>
+                                <p class="project-card_description">
+                                    Прототип магазина с корзиной товаров
+                                </p>
+                                <div class="project-card_tags">
+                                    <span class="tag">React</span>
+                                    <span class="tag">API</span>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                    <div class="gallery__item">
-                        <div class="gallery__image-container">
-                            <img src="images/gallery4.jpg" 
-                                 alt="Галерея 4 - Архитектура" 
-                                 class="gallery__image"
-                                 loading="lazy">
-                        </div>
-                    </div>
-                </div>
-                <div class="explanation">
-                    <h3>Что происходит:</h3>
-                    <ul>
-                        <li><strong>На десктопах:</strong> 4 изображения в ряд, пропорциональное масштабирование</li>
-                        <li><strong>На планшетах:</strong> 2 изображения в ряд</li>
-                        <li><strong>На мобильных:</strong> 1 изображение в ряд, полная видимость</li>
-                        <li><strong>Особенности:</strong> Плавное масштабирование, сохранение пропорций</li>
-                    </ul>
-                </div>
-            </section>
- 
+                </section>
+            </div>
         </main>
 
+        <!-- Footer -->
         <footer class="footer">
-            <p>Измените размер окна браузера чтобы увидеть адаптивность в действии!</p>
+            <div class="container">
+                <div class="footer_content">
+                    <p class="footer_copyright">&copy; 2025 Портфолио студента</p>
+                    <div class="footer_links">
+                        <a href="mailto:mirea@mirea.ru" class="footer_link">mirea@mirea.ru</a>
+                        <a href="pages/contacts.html" class="footer_link">Контакты</a>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 
     <script>
-        // Анимация прогресс-баров в таблице
+        // Анимация прогресс-баров
         document.addEventListener('DOMContentLoaded', function() {
-            const progressBars = document.querySelectorAll('.progress-fill');
+            const progressBars = document.querySelectorAll('.skill_progress-bar');
             progressBars.forEach(bar => {
                 const width = bar.style.width;
                 bar.style.width = '0';
                 setTimeout(() => {
                     bar.style.width = width;
-                }, 500);
+                }, 100);
             });
 
-            // Обработка формы
-            const form = document.querySelector('.adaptive-form');
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Форма успешно отправлена!');
-                form.reset();
+            // Lazy loading изображений
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.classList.add('loaded');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(img => imageObserver.observe(img));
+            } else {
+                // Fallback для браузеров без IntersectionObserver
+                lazyImages.forEach(img => {
+                    img.classList.add('loaded');
+                });
+            }
+
+            // Кнопка скачивания резюме
+            document.querySelector('.hero_button').addEventListener('click', function() {
+                alert('Резюме будет скачано!');
+                // В реальном проекте здесь будет ссылка на файл
             });
         });
     </script>
