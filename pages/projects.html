@@ -5,70 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Проекты - Портфолио</title>
     <link rel="stylesheet" href="style/styles.css">
-    <style>
-        .project-card {
-            transition: transform 0.2s;
-            height: 100%;
-            background: var(--color-surface);
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-        .project-img {
-            height: 200px;
-            object-fit: cover;
-            width: 100%;
-        }
-        .filter-btn {
-            padding: var(--space-sm) var(--space-md);
-            background: var(--color-surface);
-            border: 2px solid var(--color-border);
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--color-primary);
-            color: white;
-            border-color: var(--color-primary);
-        }
-        .badge {
-            display: inline-block;
-            padding: var(--space-xs) var(--space-sm);
-            background: var(--color-primary);
-            color: white;
-            border-radius: var(--border-radius);
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin: 2px;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        .modal-content {
-            background: var(--color-surface);
-            padding: var(--space-xl);
-            border-radius: var(--border-radius-lg);
-            max-width: 600px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-    </style>
 </head>
 <body>
     <div class="page-container">
@@ -99,66 +35,70 @@
 
         <!-- Main Content -->
         <main class="content">
-            <div style="text-align: center; margin-bottom: var(--space-xl);">
-                <h2 style="color: var(--color-primary); margin-bottom: var(--space-sm);">Мои проекты</h2>
-                <p style="color: var(--color-text-light);">Полная коллекция учебных и личных работ</p>
+            <div class="text-center mb-5">
+                <h2 class="text-primary mb-2">Мои проекты</h2>
+                <p class="text-muted">Полная коллекция учебных и личных работ</p>
+            </div>
+
+            <!-- ITM JavaScript Beach Section -->
+            <div class="card text-center mb-5">
+                <h3 class="text-primary mb-3">ИТМ_JavaScriptBeach</h3>
+                <p class="text-muted mb-0">Учебный проект по JavaScript разработке</p>
             </div>
 
             <!-- Filters -->
-            <div style="margin-bottom: var(--space-xl);">
-                <div style="background: var(--color-surface); padding: var(--space-lg); border-radius: var(--border-radius-lg); box-shadow: var(--shadow);">
-                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); justify-content: center;">
-                        <button class="filter-btn active" data-filter="all">Все</button>
-                        <button class="filter-btn" data-filter="html">HTML</button>
-                        <button class="filter-btn" data-filter="js">JavaScript</button>
-                        <button class="filter-btn" data-filter="react">React</button>
-                    </div>
+            <div class="card mb-5">
+                <div class="flex-wrap" style="justify-content: center;">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="html">HTML</button>
+                    <button class="filter-btn" data-filter="js">JavaScript</button>
+                    <button class="filter-btn" data-filter="react">React</button>
                 </div>
             </div>
 
             <!-- Projects Grid -->
-            <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);">
+            <div class="grid-3" id="projectsGrid">
                 <!-- Project 1 -->
-                <div class="project-card" data-category="html" onclick="openModal('modal1')">
+                <div class="project-card" data-category="html">
                     <img src="../images/project1.jpg" class="project-img" alt="Личный сайт">
                     <div style="padding: var(--space-lg); display: flex; flex-direction: column; height: calc(100% - 200px);">
                         <h3 style="margin-bottom: var(--space-sm);">Личный сайт</h3>
                         <p style="flex-grow: 1; margin-bottom: var(--space-md); color: var(--color-text-light);">
                             Персональный веб-сайт-портфолио с адаптивным дизайном
                         </p>
-                        <div>
-                            <span class="badge" style="background: var(--color-primary);">HTML/CSS</span>
-                            <span class="badge" style="background: var(--color-accent);">Bootstrap</span>
+                        <div class="flex-wrap">
+                            <span class="badge">HTML/CSS</span>
+                            <span class="badge badge-info">Bootstrap</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card" data-category="js" onclick="openModal('modal2')">
+                <div class="project-card" data-category="js">
                     <img src="../images/project2.jpg" class="project-img" alt="Todo-приложение">
                     <div style="padding: var(--space-lg); display: flex; flex-direction: column; height: calc(100% - 200px);">
                         <h3 style="margin-bottom: var(--space-sm);">Todo-приложение</h3>
                         <p style="flex-grow: 1; margin-bottom: var(--space-md); color: var(--color-text-light);">
                             Приложение для управления задачами с локальным хранилищем
                         </p>
-                        <div>
-                            <span class="badge" style="background: var(--color-secondary);">JavaScript</span>
-                            <span class="badge" style="background: var(--color-accent);">Bootstrap</span>
+                        <div class="flex-wrap">
+                            <span class="badge badge-success">JavaScript</span>
+                            <span class="badge badge-info">Bootstrap</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card" data-category="react" onclick="openModal('modal3')">
+                <div class="project-card" data-category="react">
                     <img src="../images/project3.jpg" class="project-img" alt="Интернет-магазин">
                     <div style="padding: var(--space-lg); display: flex; flex-direction: column; height: calc(100% - 200px);">
                         <h3 style="margin-bottom: var(--space-sm);">Интернет-магазин</h3>
                         <p style="flex-grow: 1; margin-bottom: var(--space-md); color: var(--color-text-light);">
                             Полнофункциональный интернет-магазин с корзиной покупок
                         </p>
-                        <div>
-                            <span class="badge" style="background: #f59e0b;">React</span>
-                            <span class="badge" style="background: var(--color-secondary);">JavaScript</span>
+                        <div class="flex-wrap">
+                            <span class="badge badge-warning">React</span>
+                            <span class="badge badge-success">JavaScript</span>
                         </div>
                     </div>
                 </div>
@@ -167,29 +107,14 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
-                <p>&copy; 2025 Портфолио студента. Все права защищены.</p>
+            <div class="flex-between">
+                <p class="mb-0">&copy; 2025 Портфолио студента. Все права защищены.</p>
                 <div>
                     <a href="contacts.html" style="color: white; text-decoration: none; margin-right: var(--space-lg);">Контакты</a>
                     <a href="#" style="color: white; text-decoration: none;">Политика конфиденциальности</a>
                 </div>
             </div>
         </footer>
-    </div>
-
-    <!-- Modals -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h3>Личный сайт</h3>
-            <img src="../images/project1.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--border-radius); margin: var(--space-md) 0;" alt="Личный сайт">
-            <p><strong>Описание:</strong> Персональный веб-сайт-портфолио с адаптивным дизайном, созданный с использованием HTML5, CSS3 и Bootstrap 5.</p>
-            <p><strong>Технологии:</strong> HTML, CSS, JavaScript, Bootstrap</p>
-            <div style="margin-top: var(--space-lg); display: flex; gap: var(--space-sm);">
-                <button style="padding: var(--space-sm) var(--space-md); background: var(--color-primary); color: white; border: none; border-radius: var(--border-radius); cursor: pointer;">Живая версия</button>
-                <button style="padding: var(--space-sm) var(--space-md); background: var(--color-text-light); color: white; border: none; border-radius: var(--border-radius); cursor: pointer;">Исходный код</button>
-                <button onclick="closeModal('modal1')" style="padding: var(--space-sm) var(--space-md); background: var(--color-border); color: var(--color-text); border: none; border-radius: var(--border-radius); cursor: pointer; margin-left: auto;">Закрыть</button>
-            </div>
-        </div>
     </div>
 
     <script>
@@ -210,22 +135,6 @@
                     }
                 });
             });
-        });
-
-        // Modal functionality
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-
-        // Close modal when clicking outside
-        window.addEventListener('click', function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
         });
     </script>
 </body>
