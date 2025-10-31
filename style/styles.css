@@ -115,11 +115,77 @@ body {
   margin-top: auto;
 }
 
-@media (max-width: 768px) {
+/* Адаптивные изображения */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Карточки проектов */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-lg) 0;
+}
+
+.project-card {
+  background: var(--color-surface);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card-content {
+  padding: var(--space-lg);
+}
+
+/* Адаптивная таблица */
+.responsive-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1200px) {
+  .page-container {
+    margin: 0 var(--space-md);
+  }
+}
+
+@media (max-width: 992px) {
   :root {
     --font-size-xl: 20px;
     --font-size-2xl: 24px;
     --font-size-3xl: 28px;
+    --space-xl: 30px;
+  }
+  
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-lg: 16px;
+    --font-size-xl: 18px;
+    --font-size-2xl: 22px;
+    --font-size-3xl: 26px;
+    --space-lg: 20px;
+    --space-xl: 25px;
   }
   
   .nav-list {
@@ -130,5 +196,70 @@ body {
   
   .content {
     padding: var(--space-md);
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .header h1 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --font-size-base: 14px;
+    --font-size-lg: 15px;
+    --font-size-xl: 16px;
+    --font-size-2xl: 20px;
+    --font-size-3xl: 24px;
+    --space-md: 15px;
+    --space-lg: 18px;
+  }
+  
+  .header {
+    padding: var(--space-lg);
+  }
+  
+  .content {
+    padding: var(--space-sm);
+  }
+  
+  .project-card-content {
+    padding: var(--space-md);
+  }
+}
+
+/* Утилиты для скрытия/показа элементов */
+.hidden-mobile {
+  display: block;
+}
+
+.visible-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none;
+  }
+  
+  .visible-mobile {
+    display: block;
+  }
+}
+
+/* Адаптивные кнопки */
+.btn-responsive {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-base);
+}
+
+@media (max-width: 768px) {
+  .btn-responsive {
+    width: 100%;
+    margin-bottom: var(--space-sm);
   }
 }
