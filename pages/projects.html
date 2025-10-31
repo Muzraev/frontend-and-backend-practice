@@ -234,35 +234,35 @@
                 </div>
 
                 <!-- Демонстрация object-fit -->
-                <section class="section">
-                    <h2 class="section-title">Техники адаптивных изображений</h2>
+                <section class="section object-fit-section">
+                    <h2 class="section-title">Демонстрация object-fit</h2>
                     <div class="object-fit-demo">
                         <div class="object-fit-item">
                             <div class="project-image-container">
-                                <img src="../images/square.jpg" 
-                                     alt="Cover пример" 
-                                     class="object-fit-cover"
+                                <img src="../images/portrait.jpg" 
+                                     alt="Object-fit cover" 
+                                     class="project-image object-fit-cover"
                                      loading="lazy">
                             </div>
-                            <span>object-fit: cover</span>
+                            <p>object-fit: cover</p>
                         </div>
                         <div class="object-fit-item">
                             <div class="project-image-container">
-                                <img src="../images/square.jpg" 
-                                     alt="Contain пример" 
-                                     class="object-fit-contain"
+                                <img src="../images/portrait.jpg" 
+                                     alt="Object-fit contain" 
+                                     class="project-image object-fit-contain"
                                      loading="lazy">
                             </div>
-                            <span>object-fit: contain</span>
+                            <p>object-fit: contain</p>
                         </div>
                         <div class="object-fit-item">
                             <div class="project-image-container">
-                                <img src="../images/square.jpg" 
-                                     alt="Fill пример" 
-                                     class="object-fit-fill"
+                                <img src="../images/portrait.jpg" 
+                                     alt="Object-fit fill" 
+                                     class="project-image object-fit-fill"
                                      loading="lazy">
                             </div>
-                            <span>object-fit: fill</span>
+                            <p>object-fit: fill</p>
                         </div>
                     </div>
                 </section>
@@ -288,6 +288,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const filters = document.querySelectorAll('.filter');
             const projects = document.querySelectorAll('.project-card');
+            const projectsGrid = document.getElementById('projectsGrid');
 
             filters.forEach(filter => {
                 filter.addEventListener('click', function() {
@@ -295,11 +296,12 @@
                     filters.forEach(f => f.classList.remove('filter--active'));
                     // Добавляем активный класс текущему фильтру
                     this.classList.add('filter--active');
-
-                    const filterValue = this.dataset.filter;
-
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Показываем/скрываем проекты
                     projects.forEach(project => {
-                        if (filterValue === 'all' || project.dataset.category === filterValue) {
+                        if (filterValue === 'all' || project.getAttribute('data-category') === filterValue) {
                             project.style.display = 'block';
                         } else {
                             project.style.display = 'none';
@@ -308,39 +310,29 @@
                 });
             });
 
+            // Обработка кнопок проектов
+            const projectButtons = document.querySelectorAll('.project-card_button');
+            projectButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const projectTitle = this.closest('.project-card').querySelector('.project-card_title').textContent;
+                    alert(`Открывается страница проекта: ${projectTitle}`);
+                });
+            });
+
             // Lazy loading изображений
             const lazyImages = document.querySelectorAll('img[loading="lazy"]');
             
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            img.classList.add('loaded');
-                            imageObserver.unobserve(img);
-                        }
-                    });
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
                 });
-
-                lazyImages.forEach(img => imageObserver.observe(img));
-            } else {
-                lazyImages.forEach(img => {
-                    img.classList.add('loaded');
-                });
-            }
-
-            // Анимация карточек при загрузке
-            const projectCards = document.querySelectorAll('.project-card');
-            projectCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 100);
             });
+
+            lazyImages.forEach(img => imageObserver.observe(img));
         });
     </script>
 </body>

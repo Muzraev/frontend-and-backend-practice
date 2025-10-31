@@ -41,70 +41,104 @@
         <!-- Main Content -->
         <main class="main">
             <div class="container">
-                <h2 class="section-title">Учебный дневник</h2>
-                
-                <!-- Timeline -->
-                <div class="timeline">
-                    <div class="timeline_item">
-                        <div class="timeline_date">13 ноября 2024</div>
-                        <div class="timeline_content">
-                            <h3 class="timeline_title">Контрольная работа по фронтенду</h3>
-                            <p class="timeline_description">Создание адаптивной веб-страницы с использованием HTML5, CSS3 и JavaScript. Реализация интерактивных элементов и валидации форм.</p>
-                            <span class="timeline_status timeline_status--completed">Завершено</span>
-                        </div>
-                    </div>
+                <section class="section">
+                    <h2 class="section-title">Дневник разработки</h2>
+                    
+                    <!-- Timeline -->
+                    <div class="timeline">
+                        <!-- Запись 1 -->
+                        <article class="timeline_item">
+                            <div class="timeline_date">15.01.2025</div>
+                            <div class="timeline_content">
+                                <h3 class="timeline_title">Начало разработки портфолио</h3>
+                                <p class="timeline_description">
+                                    Создана базовая структура HTML-документов. Разработана семантическая разметка для всех страниц. 
+                                    Начата работа над CSS-стилями и адаптивным дизайном.
+                                </p>
+                                <span class="timeline_status timeline_status--completed">Завершено</span>
+                            </div>
+                        </article>
 
-                    <div class="timeline_item">
-                        <div class="timeline_date">18 ноября 2024</div>
-                        <div class="timeline_content">
-                            <h3 class="timeline_title">Выходные - подготовка к проекту</h3>
-                            <p class="timeline_description">Изучение современных фреймворков и библиотек для фронтенд разработки. Подготовка к созданию полноценного веб-приложения.</p>
-                            <span class="timeline_status timeline_status--completed">Завершено</span>
-                        </div>
-                    </div>
+                        <!-- Запись 2 -->
+                        <article class="timeline_item">
+                            <div class="timeline_date">18.01.2025</div>
+                            <div class="timeline_content">
+                                <h3 class="timeline_title">Реализация фильтрации проектов</h3>
+                                <p class="timeline_description">
+                                    Добавлена JavaScript-функциональность для фильтрации проектов по категориям. 
+                                    Реализована плавная анимация переключения между фильтрами.
+                                </p>
+                                <span class="timeline_status timeline_status--completed">Завершено</span>
+                            </div>
+                        </article>
 
-                    <div class="timeline_item">
-                        <div class="timeline_date">19 ноября 2024</div>
-                        <div class="timeline_content">
-                            <h3 class="timeline_title">Продолжение работы над проектом</h3>
-                            <p class="timeline_description">Разработка пользовательского интерфейса и реализация основной функциональности веб-приложения. Оптимизация производительности.</p>
-                            <span class="timeline_status timeline_status--in-progress">В процессе</span>
-                        </div>
-                    </div>
+                        <!-- Запись 3 -->
+                        <article class="timeline_item">
+                            <div class="timeline_date">20.01.2025</div>
+                            <div class="timeline_content">
+                                <h3 class="timeline_title">Оптимизация производительности</h3>
+                                <p class="timeline_description">
+                                    Внедрена ленивая загрузка изображений (lazy loading). Добавлена поддержка формата WebP. 
+                                    Оптимизированы CSS-стили и JavaScript-код для улучшения времени загрузки.
+                                </p>
+                                <span class="timeline_status timeline_status--completed">Завершено</span>
+                            </div>
+                        </article>
 
-                    <div class="timeline_item">
-                        <div class="timeline_date">25 ноября 2024</div>
-                        <div class="timeline_content">
-                            <h3 class="timeline_title">Изучение React.js</h3>
-                            <p class="timeline_description">Освоение основных концепций React: компоненты, состояние, props, хуки. Создание первых React-приложений.</p>
-                            <span class="timeline_status timeline_status--in-progress">В процессе</span>
-                        </div>
-                    </div>
+                        <!-- Запись 4 -->
+                        <article class="timeline_item">
+                            <div class="timeline_date">22.01.2025</div>
+                            <div class="timeline_content">
+                                <h3 class="timeline_title">Добавление темной темы</h3>
+                                <p class="timeline_description">
+                                    Реализована поддержка системных предпочтений темной темы через CSS media queries. 
+                                    Создана единая система цветовых переменных для легкого переключения между темами.
+                                </p>
+                                <span class="timeline_status timeline_status--in-progress">В процессе</span>
+                            </div>
+                        </article>
 
-                    <div class="timeline_item">
-                        <div class="timeline_date">31 декабря 2024</div>
-                        <div class="timeline_content">
-                            <h3 class="timeline_title">Новый Год - отдых</h3>
-                            <p class="timeline_description">Время для отдыха, подведения итогов года и планирования учебных целей на следующий семестр.</p>
-                            <span class="timeline_status timeline_status--planned">Запланировано</span>
-                        </div>
-                    </div>
-                </div>
+                        <!-- Запись 5 -->
+                        <article class="timeline_item">
+                            <div class="timeline_date">25.01.2025</div>
+                            <div class="timeline_content">
+                                <h3 class="timeline_title">Тестирование доступности</h3>
+                                <p class="timeline_description">
+                                    Проведено тестирование доступности сайта с помощью screen readers. 
+                                    Улучшена семантика HTML, добавлены ARIA-атрибуты и улучшена навигация с клавиатуры.
+                                </p>
+                                <span class="timeline_status timeline_status--planned">Запланировано</span>
+                            </div>
+                        </article>
 
-                <!-- Courses Progress -->
-                <section class="courses">
-                    <h3 class="courses_title">Текущие курсы</h3>
+                        <!-- Запись 6 -->
+                        <article class="timeline_item">
+                            <div class="timeline_date">28.01.2025</div>
+                            <div class="timeline_content">
+                                <h3 class="timeline_title">Деплой на хостинг</h3>
+                                <p class="timeline_description">
+                                    Настройка CI/CD пайплайна для автоматического деплоя. 
+                                    Оптимизация сборки и настройка кэширования для улучшения производительности.
+                                </p>
+                                <span class="timeline_status timeline_status--planned">Запланировано</span>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Прогресс курсов -->
+                <section class="section courses">
+                    <h2 class="section-title">Прогресс обучения</h2>
                     <div class="courses_grid">
                         <div class="course">
                             <div class="course_header">
-                                <span class="course_name">Веб-разработка</span>
-                                <span class="course_percent">90%</span>
+                                <span class="course_name">HTML/CSS</span>
+                                <span class="course_percent">85%</span>
                             </div>
                             <div class="course_progress">
-                                <div class="course_progress-bar" style="width: 90%"></div>
+                                <div class="course_progress-bar" style="width: 85%"></div>
                             </div>
                         </div>
-
                         <div class="course">
                             <div class="course_header">
                                 <span class="course_name">JavaScript</span>
@@ -114,59 +148,25 @@
                                 <div class="course_progress-bar" style="width: 70%"></div>
                             </div>
                         </div>
-
                         <div class="course">
                             <div class="course_header">
                                 <span class="course_name">React</span>
+                                <span class="course_percent">65%</span>
+                            </div>
+                            <div class="course_progress">
+                                <div class="course_progress-bar" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="course">
+                            <div class="course_header">
+                                <span class="course_name">Node.js</span>
                                 <span class="course_percent">50%</span>
                             </div>
                             <div class="course_progress">
                                 <div class="course_progress-bar" style="width: 50%"></div>
                             </div>
                         </div>
-
-                        <div class="course">
-                            <div class="course_header">
-                                <span class="course_name">Базы данных</span>
-                                <span class="course_percent">40%</span>
-                            </div>
-                            <div class="course_progress">
-                                <div class="course_progress-bar" style="width: 40%"></div>
-                            </div>
-                        </div>
                     </div>
-                </section>
-
-                <!-- Add Entry Form -->
-                <section class="add-entry">
-                    <h3 class="add-entry_title">Добавить учебную запись</h3>
-                    <form class="add-entry_form">
-                        <div class="form-group">
-                            <label for="entryDate" class="form-label">Дата</label>
-                            <input type="date" id="entryDate" class="form-input" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="entryTitle" class="form-label">Название</label>
-                            <input type="text" id="entryTitle" class="form-input" required placeholder="Введите название записи">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="entryDescription" class="form-label">Описание</label>
-                            <textarea id="entryDescription" class="form-textarea" placeholder="Опишите учебную активность..."></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="entryStatus" class="form-label">Статус</label>
-                            <select id="entryStatus" class="form-input" required>
-                                <option value="planned">Запланировано</option>
-                                <option value="in-progress">В процессе</option>
-                                <option value="completed">Завершено</option>
-                            </select>
-                        </div>
-                        
-                        <button type="submit" class="button button--primary form_button">Добавить запись</button>
-                    </form>
                 </section>
             </div>
         </main>
@@ -186,23 +186,38 @@
     </div>
 
     <script>
-        // Анимация прогресс-баров
         document.addEventListener('DOMContentLoaded', function() {
-            const progressBars = document.querySelectorAll('.course_progress-bar');
-            progressBars.forEach(bar => {
+            // Анимация прогресс-баров курсов
+            const courseBars = document.querySelectorAll('.course_progress-bar');
+            courseBars.forEach(bar => {
                 const width = bar.style.width;
                 bar.style.width = '0';
                 setTimeout(() => {
                     bar.style.width = width;
-                }, 500);
+                }, 300);
             });
 
-            // Обработка формы
-            const form = document.querySelector('.add-entry_form');
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Запись успешно добавлена!');
-                form.reset();
+            // Добавление анимации появления для timeline элементов
+            const timelineItems = document.querySelectorAll('.timeline_item');
+            
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            timelineItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                item.style.transitionDelay = `${index * 0.1}s`;
+                
+                timelineObserver.observe(item);
             });
         });
     </script>

@@ -41,100 +41,91 @@
         <!-- Main Content -->
         <main class="main">
             <div class="container">
-                <h2 class="section-title">Контакты</h2>
-                
-                <div class="contacts_content">
-                    <!-- Contact Form -->
-                    <div class="contact-form">
-                        <h3 class="contact-info_title">Форма обратной связи</h3>
-                        <form class="form">
-                            <div class="form_group">
-                                <label for="name" class="form_label">Имя <span class="text-danger">*</span></label>
-                                <input type="text" id="name" class="form_input" required placeholder="Введите ваше имя">
-                            </div>
-                            
-                            <div class="form_group">
-                                <label for="phone" class="form_label">Телефон <span class="text-danger">*</span></label>
-                                <input type="tel" id="phone" class="form_input" required placeholder="+7 (XXX) XXX-XX-XX">
-                            </div>
-                            
-                            <div class="form_group">
-                                <label for="email" class="form_label">Электронная почта <span class="text-danger">*</span></label>
-                                <input type="email" id="email" class="form_input" required placeholder="example@mail.ru">
-                            </div>
-                            
-                            <div class="form_group">
-                                <label for="category" class="form_label">Категория обращения <span class="text-danger">*</span></label>
-                                <select id="category" class="form_input" required>
-                                    <option value="">Выберите категорию</option>
-                                    <option value="technical">Техническая поддержка</option>
-                                    <option value="commercial">Коммерческое предложение</option>
-                                    <option value="cooperation">Сотрудничество</option>
-                                    <option value="complaint">Жалоба</option>
-                                    <option value="suggestion">Предложение</option>
-                                    <option value="other">Другое</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form_group">
-                                <label for="message" class="form_label">Текст обращения <span class="text-danger">*</span></label>
-                                <textarea id="message" class="form_textarea" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="button button--primary form_button">Отправить сообщение</button>
-                        </form>
-                    </div>
-
-                    <!-- Contact Info -->
-                    <div class="contact-info">
-                        <h3 class="contact-info_title">Контактная информация</h3>
-                        <div class="contact-info_items">
-                            <div class="contact-item">
-                                <div class="contact-item_icon">📧</div>
-                                <div class="contact-item_content">
-                                    <h4 class="contact-item_title">Электронная почта</h4>
-                                    <p class="contact-item_value">mirea@mirea.ru</p>
+                <section class="section">
+                    <h2 class="section-title">Свяжитесь со мной</h2>
+                    
+                    <div class="contacts_content">
+                        <!-- Контактная информация -->
+                        <div class="contact-info">
+                            <h3 class="contact-info_title">Контактная информация</h3>
+                            <div class="contact-info_items">
+                                <div class="contact-item">
+                                    <div class="contact-item_icon">📧</div>
+                                    <div class="contact-item_content">
+                                        <h4 class="contact-item_title">Email</h4>
+                                        <p class="contact-item_value">mirea@mirea.ru</p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-item_icon">📞</div>
-                                <div class="contact-item_content">
-                                    <h4 class="contact-item_title">Телефон</h4>
-                                    <p class="contact-item_value">+7 (495) 123-45-67</p>
+                                <div class="contact-item">
+                                    <div class="contact-item_icon">📱</div>
+                                    <div class="contact-item_content">
+                                        <h4 class="contact-item_title">Телефон</h4>
+                                        <p class="contact-item_value">+7 (XXX) XXX-XX-XX</p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-item_icon">📍</div>
-                                <div class="contact-item_content">
-                                    <h4 class="contact-item_title">Адрес</h4>
-                                    <p class="contact-item_value">г. Москва, ул. Пушкина, д. Колотушкина</p>
+                                <div class="contact-item">
+                                    <div class="contact-item_icon">📍</div>
+                                    <div class="contact-item_content">
+                                        <h4 class="contact-item_title">Адрес</h4>
+                                        <p class="contact-item_value">
+                                            Москва, Россия<br>
+                                            Университет МИРЭА
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-item_icon">🕒</div>
-                                <div class="contact-item_content">
-                                    <h4 class="contact-item_title">Время работы</h4>
-                                    <p class="contact-item_value">Пн-Пт: 9:00-18:00<br>Сб-Вс: выходной</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-item_icon">🌐</div>
-                                <div class="contact-item_content">
-                                    <h4 class="contact-item_title">Социальные сети</h4>
-                                    <p class="contact-item_value">
-                                        <a href="#" style="color: var(--primary-color); text-decoration: none;">VK</a> • 
-                                        <a href="#" style="color: var(--primary-color); text-decoration: none;">Telegram</a> • 
-                                        <a href="#" style="color: var(--primary-color); text-decoration: none;">GitHub</a>
-                                    </p>
+                                <div class="contact-item">
+                                    <div class="contact-item_icon">💼</div>
+                                    <div class="contact-item_content">
+                                        <h4 class="contact-item_title">Социальные сети</h4>
+                                        <p class="contact-item_value">
+                                            GitHub: github.com/username<br>
+                                            LinkedIn: linkedin.com/in/username
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Форма обратной связи -->
+                        <div class="contact-form">
+                            <h3 class="contact-info_title">Форма обратной связи</h3>
+                            <form class="form" id="contactForm">
+                                <div class="form_group">
+                                    <label for="name" class="form_label">Имя *</label>
+                                    <input type="text" id="name" name="name" class="form_input" required>
+                                    <div class="text-danger" id="nameError"></div>
+                                </div>
+
+                                <div class="form_group">
+                                    <label for="email" class="form_label">Email *</label>
+                                    <input type="email" id="email" name="email" class="form_input" required>
+                                    <div class="text-danger" id="emailError"></div>
+                                </div>
+
+                                <div class="form_group">
+                                    <label for="subject" class="form_label">Тема</label>
+                                    <select id="subject" name="subject" class="form_select">
+                                        <option value="">Выберите тему</option>
+                                        <option value="project">Сотрудничество по проекту</option>
+                                        <option value="job">Предложение о работе</option>
+                                        <option value="question">Вопрос по обучению</option>
+                                        <option value="other">Другое</option>
+                                    </select>
+                                </div>
+
+                                <div class="form_group">
+                                    <label for="message" class="form_label">Сообщение *</label>
+                                    <textarea id="message" name="message" class="form_textarea" required></textarea>
+                                    <div class="text-danger" id="messageError"></div>
+                                </div>
+
+                                <button type="submit" class="button button--primary">
+                                    Отправить сообщение
+                                </button>
+                            </form>
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
         </main>
 
@@ -153,36 +144,88 @@
     </div>
 
     <script>
-        // Обработка формы обратной связи
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('.form');
-            
-            form.addEventListener('submit', function(e) {
+            const contactForm = document.getElementById('contactForm');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const messageError = document.getElementById('messageError');
+
+            // Валидация формы
+            function validateForm() {
+                let isValid = true;
+
+                // Валидация имени
+                if (nameInput.value.trim() === '') {
+                    nameError.textContent = 'Пожалуйста, введите ваше имя';
+                    isValid = false;
+                } else {
+                    nameError.textContent = '';
+                }
+
+                // Валидация email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailInput.value.trim())) {
+                    emailError.textContent = 'Пожалуйста, введите корректный email';
+                    isValid = false;
+                } else {
+                    emailError.textContent = '';
+                }
+
+                // Валидация сообщения
+                if (messageInput.value.trim() === '') {
+                    messageError.textContent = 'Пожалуйста, введите сообщение';
+                    isValid = false;
+                } else if (messageInput.value.trim().length < 10) {
+                    messageError.textContent = 'Сообщение должно содержать минимум 10 символов';
+                    isValid = false;
+                } else {
+                    messageError.textContent = '';
+                }
+
+                return isValid;
+            }
+
+            // Обработка отправки формы
+            contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                if (!form.checkValidity()) {
-                    form.reportValidity();
-                    return;
+                if (validateForm()) {
+                    // Имитация отправки формы
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitButton.textContent;
+                    
+                    submitButton.textContent = 'Отправка...';
+                    submitButton.disabled = true;
+
+                    setTimeout(() => {
+                        alert('Сообщение успешно отправлено! Я свяжусь с вами в ближайшее время.');
+                        contactForm.reset();
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                    }, 2000);
                 }
-                
-                const formData = {
-                    name: document.getElementById('name').value,
-                    phone: document.getElementById('phone').value,
-                    email: document.getElementById('email').value,
-                    category: document.getElementById('category').value,
-                    message: document.getElementById('message').value
-                };
-                
-                console.log('Данные формы:', formData);
-                
-                alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
-                form.reset();
             });
 
-            // Запрет отправки формы по Enter для всех полей кроме textarea
-            form.addEventListener('keypress', function(event) {
-                if (event.key === 'Enter' && event.target.type !== 'textarea') {
-                    event.preventDefault();
+            // Реальная валидация при вводе
+            nameInput.addEventListener('input', function() {
+                if (nameInput.value.trim() !== '') {
+                    nameError.textContent = '';
+                }
+            });
+
+            emailInput.addEventListener('input', function() {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailRegex.test(emailInput.value.trim())) {
+                    emailError.textContent = '';
+                }
+            });
+
+            messageInput.addEventListener('input', function() {
+                if (messageInput.value.trim() !== '' && messageInput.value.trim().length >= 10) {
+                    messageError.textContent = '';
                 }
             });
         });
