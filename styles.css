@@ -778,3 +778,190 @@ img[loading="lazy"].loaded {
         transition-duration: 0.01ms !important;
     }
 }
+/* Добавляем в конец файла styles.css */
+
+/* Стили для доступности */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Улучшенные стили фокуса */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+a:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.nav_link:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Стили для полей формы */
+.form-fieldset {
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.form-legend {
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 0 var(--space-sm);
+}
+
+.form-input--error {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.form-error {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: var(--space-xs);
+    font-weight: 500;
+}
+
+.form-hint {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    margin-top: var(--space-xs);
+}
+
+.required-indicator {
+    color: #dc2626;
+}
+
+/* Стили для контактных ссылок */
+.contact-link,
+.social-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-link:hover,
+.social-link:hover {
+    text-decoration: underline;
+}
+
+.contact-link:focus,
+.social-link:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Сообщение об успехе */
+.success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #10b981;
+    color: white;
+    padding: var(--space-md);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    z-index: 10000;
+    max-width: 400px;
+}
+
+.success-message:focus {
+    outline: 3px solid #059669;
+}
+
+/* Чекбокс */
+.form_checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+}
+
+.form_checkbox input[type="checkbox"] {
+    margin-top: 0.25rem;
+}
+
+.form_checkbox-label {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Состояния для кнопок */
+button[aria-busy="true"] {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Улучшения для навигации */
+.nav_list[role="menubar"] {
+    display: flex;
+    list-style: none;
+}
+
+.nav_item[role="none"] {
+    flex: 1;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .form-fieldset {
+        padding: var(--space-sm);
+    }
+    
+    .success-message {
+        left: 20px;
+        right: 20px;
+        max-width: none;
+    }
+}
+
+/* Поддержка prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .nav_link,
+    .contact-link,
+    .social-link,
+    .button {
+        transition: none;
+    }
+}
+
+/* Высококонтрастный режим */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #0000ff;
+        --border-color: #000000;
+    }
+    
+    .nav_link--active {
+        background: #000000;
+        color: #ffffff;
+    }
+}
+
+/* Темная тема - дополнительные стили */
+@media (prefers-color-scheme: dark) {
+    .form-fieldset {
+        border-color: #475569;
+    }
+    
+    .form-error {
+        color: #f87171;
+    }
+    
+    .success-message {
+        background: #059669;
+        color: #ffffff;
+    }
+}
